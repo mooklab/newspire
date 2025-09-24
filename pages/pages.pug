@@ -1,0 +1,23 @@
+extends common/pug/_layout.pug
+include common/pug/_mixins.pug
+
+
+block links
+    link(rel="stylesheet", href="css/pages.css")
+
+block content
+    
+    section.pages
+        div.container
+
+            div.list
+                a(href="index.html", target="blank") Главная
+                a(href="projects.html", target="blank") Проекты
+                a(href="project.html", target="blank") Проект
+                a(href="services.html", target="blank") Услуги
+                a(href="service.html", target="blank") Услуга
+                a(href="about.html", target="blank") О компаннии
+                a(href="news.html", target="blank") Новости
+                a(data-modal-target="article") Новость
+                a(href="contacts.html", target="blank") Контакты
+                a(data-modal-target="callback") Обратная связь
