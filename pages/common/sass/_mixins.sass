@@ -1,0 +1,16 @@
+// Наведение только для десктопной версии
+@mixin hover
+    @media (hover: hover)
+        &:hover
+            @content
+
+// Media Query
+$breakpoints: ("s": 640px, "m": 960px, "l": 1400px, "xl": 1620px, 'xxl': 1920px)
+@mixin s($breakpoint)
+    @if map-has-key($breakpoints, $breakpoint)
+        $breakpoint: map-get($breakpoints, $breakpoint)
+        @media (max-width: $breakpoint)
+            @content
+    @else
+        @media (max-width: $breakpoint)
+            @content

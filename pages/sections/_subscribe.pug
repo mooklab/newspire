@@ -1,0 +1,24 @@
+mixin subscribe(title, text)
+    section.subscribe
+        div.container
+
+            div.text
+                span [ Обратная связь ]
+                h2= title
+                span= text
+
+            div.form
+                form
+                    input(type="text", name="name", placeholder="Имя")
+                    input(type="email", name="email", placeholder="Email*")
+                    input(type="tel", name="phone", placeholder="+7 (000) 000 00 00")
+
+                    label.checkbox
+                        input(type="checkbox", name="policy", checked)
+                        span Нажимая на кнопку, вы соглашаетесь с #[a(href="index.html") политикой конфиденциальности]
+
+                    button.gray_arrow
+                        span Отправить
+                        div.arrow
+                            include ../../images/main_arrow.svg
+

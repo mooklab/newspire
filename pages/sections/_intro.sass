@@ -1,0 +1,74 @@
+section.intro
+    background: white
+    padding-top: 30px
+    height: 363px
+    +s(xl)
+        padding-top: 20px
+        height: 350px
+    +s(l)
+        height: 310px
+    +s(m)
+        height: 294px
+        padding-top: 34px
+    +s(s)
+        height: 350px
+        padding-top: 15px
+
+    div.container
+        display: grid
+        align-items: start
+        align-content: start
+        grid-gap: 67px
+        z-index: 1
+        +s(m)
+            grid-gap: 30px
+        +s(s)
+            grid-gap: 35px
+
+    a.back
+        display: none
+        align-items: center
+        justify-items: center
+        width: 50px
+        height: 50px
+        border-radius: 3px
+        background: #f5f5f7
+        +s(m)
+            display: grid
+
+        &:hover
+            background: linear-gradient(133deg, #7f178d 0%, #ef8218 78.55%, #dcde38 100%)
+            svg
+                path
+                    stroke: white
+
+    div.text
+        display: grid
+        grid-gap: 30px
+        +s(xl)
+            grid-gap: 20px
+
+    h1
+        position: relative
+        &:after
+            position: absolute
+            top: 0
+            left: 0
+            content: attr(data-text)
+            color: #F5F5F7
+            font-size: 150px
+            z-index: -1
+            text-transform: uppercase
+            +s(xl)
+                font-size: 120px
+            +s(l)
+                font-size: 110px
+            +s(m)
+                font-size: 80px
+            +s(s)
+                font-size: 60px
+
+    h1 + span
+            display: block
+            max-width: 500px
+            color: #767676

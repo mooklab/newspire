@@ -1,0 +1,49 @@
+extends common/pug/_layout.pug
+include common/pug/_mixins.pug
+include sections/_intro.pug
+
+block links
+    link(rel="stylesheet", href="css/news.css")
+
+block content
+    +intro('Пресс-центр', 'Пресс-центр', 'Мы в курсе главного в EXPO. Рассказываем о самых свежих трендах и делимся новостями, которые помогут вашему бизнесу выделиться среди конкурентов')
+
+    section.news
+        div.container
+
+            div.filter
+                label
+                    input(type="radio", name="year", value="all", checked)
+                    span Все
+                label
+                    input(type="radio", name="year", value="2025")
+                    span 2025
+                label
+                    input(type="radio", name="year", value="2024")
+                    span 2024
+                label
+                    input(type="radio", name="year", value="2023")
+                    span 2023
+
+            div.list
+                - for (var i = 0; i < 12; i++)
+                    div(data-modal-target="article").article
+                        img(src="images/3.webp", alt="ГК «ЭФКО»").preview
+                        div.text
+                            h5 Застройка для ГК «ЭФКО»
+                            span Создать эффектный двухэтажный стенд, который будет заметным, атмосферным, подчеркивая уровень бренда на фоне других участников
+                        div.details
+                            span.date 10 мая, 2025
+                            a(href="index.html")
+                                span Подробнее
+                                img(src="images/watch_project.svg")
+
+            div.controls
+                div.pagination
+                    a(href="projects.html").active 1
+                    a(href="projects.html") 2
+                    a(href="projects.html") 3
+                    span ...
+                    a(href="projects.html") 9
+
+                a.more Показать еще

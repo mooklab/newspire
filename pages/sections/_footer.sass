@@ -1,0 +1,225 @@
+footer
+    background: #2D252F
+    color: white
+
+    div.top
+        padding-top: 70px
+        padding-bottom: 70px
+        display: grid
+        align-items: start
+        grid-template-areas: 'Logotype Menu Contacts Callback'
+        grid-template-columns: 2fr 2fr 4fr 4fr
+        grid-gap: 50px
+        +s(l)
+            padding-top: 60px
+            padding-bottom: 60px
+        +s(m)
+            padding-top: 40px
+            padding-bottom: 40px
+        +s(1200px)
+            grid-template-areas: 'Logotype Menu Contacts .' 'Logotype Note Socials Button'
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: 40px 20px
+        +s(s)
+            grid-template-areas: 'Logotype' 'Contacts' 'Callback' 'Menu'
+            grid-template-columns: 1fr
+            padding-bottom: 30px
+            grid-gap: 30px
+
+        a.logotype
+            grid-area: Logotype
+            img
+                width: 160px
+                +s(xl)
+                    width: 148px
+                +s(l)
+                    width: 102px
+                +s(m)
+                    width: 102px
+
+        menu
+            grid-area: Menu
+            display: grid
+            grid-gap: 20px
+            +s(s)
+                grid-template-columns: repeat(3, 1fr)
+                grid-gap: 10px
+            a
+                opacity: 0.5
+                &:hover
+                    opacity: 1
+
+        div.contacts
+            grid-area: Contacts
+            display: grid
+            grid-gap: 50px
+            +s(xl)
+                grid-gap: 40px
+            +s(l)
+                grid-gap: 30px
+            +s(m)
+                grid-column: 2 span
+            +s(s)
+                grid-column: 1 span
+
+            div
+                display: grid
+                grid-gap: 5px
+
+            a
+                white-space: nowrap
+
+            span
+                opacity: 0.5
+
+            a
+                opacity: 0.5
+                &:hover
+                    opacity: 1
+
+            a.color
+                color: white
+                opacity: 1
+                &:hover
+                    background: linear-gradient(149deg, #7f178d 0%, #ef8218 75.96%, #dcde38 98.56%)
+                    background-clip: text
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+
+        div.callback
+            grid-area: Callback
+            display: grid
+            align-content: start
+            justify-items: end
+            grid-template-areas: 'Note Note' 'Socials Button'
+            grid-template-columns: max-content max-content
+            grid-gap: 30px 10px
+            +s(l)
+                grid-gap: 20px 5px
+            +s(1200px)
+                display: contents
+                grid-template-areas: 'Note Socials Button'
+                grid-template-columns: 1fr 1fr 1fr
+                grid-column: 3 span
+                grid-gap: 20px
+
+            +s(s)
+                display: grid
+                justify-self: start
+                grid-column: 1 span
+                grid-template-areas: 'Note' 'Button' 'Socials'
+                grid-template-columns: 1fr
+                grid-gap: 10px
+
+            span.note
+                grid-area: Note
+                opacity: 0.5
+
+            div.socials
+                grid-area: Socials
+                display: grid
+                grid-auto-flow: column
+                grid-auto-columns: max-content
+                grid-gap: 10px
+                +s(l)
+                    grid-gap: 5px
+                +s(m)
+                    justify-self: start
+                a
+                    img
+                        width: 60px
+                        height: 60px
+                        +s(l)
+                            width: 50px
+                            height: 50px
+                        &:first-child
+                            display: block
+                        &:last-child
+                            display: none
+                    &:hover
+                        img
+                            &:first-child
+                                display: none
+                            &:last-child
+                                display: block
+
+            button
+                grid-area: Button
+                cursor: pointer
+                display: grid
+                justify-self: start
+                align-items: center
+                grid-template-columns: 1fr max-content
+                border-radius: 5px
+                height: 60px
+                padding: 5px
+                padding-left: unset
+                background: transparent
+                border: 1px solid #423645
+                +s(l)
+                    height: 50px
+                +s(m)
+                    margin-left: -15px
+                    width: calc(100% + 15px)
+                +s(s)
+                    margin-left: unset
+                    width: unset
+
+                span
+                    display: block
+                    padding-left: 32px
+                    padding-right: 32px
+                    +s(xl)
+                        padding-left: 25px
+                        padding-right: 25px
+                    +s(l)
+                        padding-left: 15px
+                        padding-right: 15px
+
+                div.arrow
+                    display: grid
+                    align-items: center
+                    justify-items: center
+                    border-radius: 3px
+                    width: 50px
+                    height: 50px
+                    background: linear-gradient(133deg, #7f178d 0%, #ef8218 78.55%, #dcde38 100%)
+                    transition: background 0.3s
+                    +s(l)
+                        width: 40px
+                        height: 40px
+
+                    svg
+                        transform: rotate(180deg)
+                        path
+                            stroke: white
+
+                &:hover
+                    border: 1px solid #878787
+                    div.arrow
+                        background: linear-gradient(109deg, #7f178d 0%, #ef8218 100%)
+
+    div.bottom
+        display: grid
+        grid-auto-flow: column
+        justify-content: space-between
+        padding-top: 30px
+        padding-bottom: 30px
+        border-top: 1px solid #413943
+        +s(l)
+            padding-top: 25px
+            padding-bottom: 25px
+        +s(s)
+            padding-top: 20px
+            padding-bottom: 20px
+
+        span, a
+            opacity: 0.5
+            +s(m)
+                font-size: 12px
+
+        a
+            text-decoration: underline
+            &:hover
+                text-decoration: none
+                opacity: 1

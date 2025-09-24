@@ -1,0 +1,170 @@
+@import /pages/common/sass/_mixins
+
+@import sections/_intro
+
+header
+    background: white
+
+section.intro
+    height: 869px
+    padding: unset
+    +s(xl)
+        height: 725px
+    +s(l)
+        height: 619px
+    +s(m)
+        height: 538px
+    +s(l)
+        height: 705px
+
+    div.container
+        position: relative
+        height: max-content
+        background: #F5F5F7
+        z-index: 1
+        padding-top: 30px
+        padding-bottom: 70px
+        +s(xl)
+            padding-top: 20px
+            padding-bottom: 60px
+        +s(l)
+            padding-bottom: 50px
+        +s(m)
+            padding-top: 34px
+        +s(s)
+            padding-top: 15px
+            padding-bottom: 30px
+
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 100%
+            display: block
+            height: 100%
+            width: calc((100vw - 100%) / 2)
+            background: #F5F5F7
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 100%
+            display: block
+            height: 100%
+            width: calc((100vw - 100%) / 2)
+            background: #F5F5F7
+
+    a.back
+        background: white
+
+    div.text
+        display: grid
+        grid-template-areas: 'Title Title' 'Description Details' 'Button Details'
+        grid-template-columns: 5fr 7fr
+        grid-gap: 20px 50px
+        +s(m)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px
+        +s(s)
+            grid-template-areas: 'Title' 'Description' 'Button' 'Details'
+            grid-template-columns: 1fr
+
+        h1.title
+            grid-area: Title
+
+        div.description
+            grid-area: Description
+
+        div.details
+            grid-area: Details
+            display: grid
+            align-items: start
+            grid-template-columns: repeat(4, max-content)
+            grid-gap: 70px
+            +s(xl)
+                grid-gap: 60px
+            +s(l)
+                grid-gap: 50px
+            +s(m)
+                justify-content: end
+                grid-template-columns: repeat(2, max-content)
+                grid-gap: 27px 70px
+            +s(s)
+                justify-content: start
+                grid-gap: 20px 50px
+
+            div.detail
+                display: grid
+                grid-gap: 5px
+
+            span
+                color: #767676
+
+        button
+            grid-area: Button
+
+    img.background
+        grid-column: full
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+section.gallery
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(l)
+        margin-top: 80px
+        margin-bottom: 80px
+    +s(m)
+        margin-top: 70px
+        margin-bottom: 70px
+
+    div.list
+        display: grid
+        grid-gap: 10px
+
+        div.two
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 10px
+
+        img
+            width: 100%
+            height: 1030px
+            object-fit: cover
+            +s(xl)
+                height: 850px
+            +s(l)
+                height: 725px
+            +s(m)
+                height: 436px
+            +s(l)
+                height: 206px
+
+    a.prev,
+    a.next
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        align-items: center
+        font-weight: 400
+        font-size: 18px
+        line-height: 140%
+        +s(l)
+            font-size: 16px
+
+        &:hover
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 54.33%, #dcde38 98.08%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+        img
+            margin-left: 3px
+
+    a.prev
+        img
+            transform: rotate(180deg)

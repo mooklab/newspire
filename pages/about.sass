@@ -1,0 +1,284 @@
+@import /pages/common/sass/_mixins
+
+@import sections/_intro
+@import sections/_certificates
+@import sections/_subscribe
+
+section.about
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(l)
+        margin-top: 80px
+        margin-bottom: 80px
+    +s(m)
+        margin-top: 70px
+        margin-bottom: 70px
+
+    div.container
+        display: grid
+        grid-gap: 100px 50px
+        grid-template-areas: 'Digits Description' 'Advantages Advantages'
+        grid-template-columns: 4fr 8fr
+        +s(xl)
+            grid-gap: 100px 40px
+        +s(l)
+            grid-gap: 80px 30px
+        +s(m)
+            grid-template-areas: 'Description' 'Digits' 'Advantages'
+            grid-template-columns: 1fr
+            grid-gap: 70px 20px
+
+    div.title
+        display: grid
+        grid-gap: 10px
+        +s(m)
+            grid-gap: 6px
+
+        span.subtitle
+            display: block
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+    div.digits
+        grid-area: Digits
+        display: grid
+        grid-gap: 80px
+        +s(xl)
+            grid-gap: 70px
+        +s(l)
+            grid-gap: 60px
+        +s(m)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: 20px
+
+        div.digit
+            display: grid
+
+            span.digit
+                font-weight: 700
+                font-size: 100px
+                line-height: 120%
+                +s(xl)
+                    font-size: 90px
+                +s(l)
+                    font-size: 80px
+                +s(m)
+                    font-size: 70px
+                +s(s)
+                    font-size: 50px
+
+                &::after
+                    content: attr(data-text)
+                    font-weight: 500
+                    font-size: 48px
+                    line-height: 120%
+                    color: #2d252f
+                    +s(xl)
+                        font-size: 40px
+                    +s(l)
+                        font-size: 36px
+                        line-height: 110%
+                    +s(m)
+                        font-size: 32px
+                    +s(s)
+                        font-size: 30px
+
+            span.note
+                color: #767676
+
+    div.description
+        grid-area: Description
+        display: grid
+        grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 25px
+
+        div.text
+            columns: 2
+            gap: 50px
+            +s(s)
+                columns: unset
+            p
+                padding-bottom: 1em
+                color: #767676
+                &:last-child
+                    padding-bottom: unset
+
+        div.video
+            position: relative
+            width: 100%
+            height: 500px
+            background: #2D252F
+            border-radius: 5px
+            overflow: hidden
+            cursor: pointer
+            +s(xl)
+                height: 412px
+            +s(l)
+                height: 350px
+            +s(m)
+                height: 320px
+            +s(s)
+                height: 250px
+
+            video
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+            div.play
+                position: absolute
+                top: 50%
+                left: 50%
+                width: 120px
+                height: 120px
+                transform: translate(-50%, -50%)
+                +s(xl)
+                    width: 100%
+                    height: 100px
+                +s(l)
+                    width: 90px
+                    height: 90px
+                +s(s)
+                    width: 73px
+                    height: 73px
+
+                img
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    transition: all 0.2s
+                    &:first-child
+                        opacity: 1
+                    &:last-child
+                        opacity: 0
+            div.play:hover
+                img
+                    &:first-child
+                        opacity: 0
+                    &:last-child
+                        opacity: 1
+
+    div.advantages
+        grid-area: Advantages
+        display: grid
+        grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 25px
+
+        div.list
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: 50px
+            +s(xl)
+                grid-gap: 40px
+            +s(l)
+                grid-gap: 30px
+            +s(m)
+                grid-gap: 20px
+                grid-template-columns: repeat(2, 1fr)
+            +s(s)
+                grid-template-columns: 1fr
+
+            div.advantage
+                display: grid
+                align-content: space-between
+                border-radius: 5px
+                height: 268px
+                padding: 30px
+                background: white
+                +s(xl)
+                    height: 242px
+                    padding: 20px
+                +s(l)
+                    height: 228px
+                +s(m)
+                    height: 196px
+                +s(s)
+                    height: 172px
+
+                img
+                    height: 50px
+                    +s(m)
+                        height: 45px
+
+section.infographic
+    text-align: center
+    background: white
+    padding-top: 100px
+    +s(l)
+        padding-top: 80px
+    +s(m)
+        padding-top: 70px
+
+    div.container
+        display: grid
+        justify-items: center
+        grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 25px
+
+    div.title
+        display: grid
+        grid-gap: 10px
+        max-width: 978px
+        +s(m)
+            grid-gap: 6px
+
+        span.subtitle
+            display: block
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+    span.text
+        display: block
+        max-width: 606px
+        color: #767676
+
+    img.xxl
+        width: calc(100% + 200px)
+        display: block
+        +s(xl)
+            display: none
+
+    img.xl
+        width: 100%
+        display: none
+        +s(xl)
+            display: block
+        +s(l)
+            display: none
+
+    img.l
+        width: 100%
+        display: none
+        +s(l)
+            display: block
+        +s(m)
+            display: none
+
+    img.m
+        width: 100%
+        display: none
+        +s(m)
+            display: block
+        +s(s)
+            display: none
+
+    img.s
+        width: 100%
+        display: none
+        +s(s)
+            display: block

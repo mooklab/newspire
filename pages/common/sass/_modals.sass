@@ -1,0 +1,15 @@
+html:has(dialog[open])
+    overflow-y: hidden
+    margin-right: var(--scrollbar-width)
+
+dialog
+    &::backdrop
+        position: fixed
+        inset: 0px
+        background: rgba(20, 0, 22, 0.6)
+    &::-webkit-scrollbar
+        width: 0
+        height: 0
+
+@import ../../modals/_article
+@import ../../modals/_callback

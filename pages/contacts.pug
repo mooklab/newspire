@@ -1,0 +1,64 @@
+extends common/pug/_layout.pug
+include common/pug/_mixins.pug
+include sections/_intro.pug
+
+block links
+    link(rel="stylesheet", href="css/contacts.css")
+    script(defer, src="scripts/map.js")
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru-RU", type="text/javascript")
+
+block content
+    +intro('Контакты', 'Контакты', 'Пора выйти из тени и зазвучать. Вы можете продолжать говорить через каталоги и баннеры или смело выйти на сцену и заявить о себе. Ваш бренд заслуживает не просто присутствия, а настоящего выступления')
+
+    section.contacts
+        div.container
+
+            div.contacts
+                div.phone
+                    div(style="background: #7f178d").dot
+                    h4 8 (977) 766 71 10
+                    a(href="") заказать обратный звонок
+                div.adress
+                    div(style="background: #EF8218").dot
+                    h4 г. Химки, ул. Рабочая д.2Ак3
+                    a(href="") заехать в офис
+                div.email
+                    div(style="background: #DCDE38").dot
+                    h4 info@newspire.ru
+                    a(href="") написать
+                div.shedule
+                    div(style="background: #4D0054").dot
+                    h4 с 08:00 до 20:00
+                    span работаем ежедневно
+                div.messengers
+                    div.list
+                        div.item: img(src="images/whatsapp_.svg", alt="")
+                        div.item: img(src="images/telegram_.svg", alt="")
+                    span месседжеры
+                div.socials
+                    div.list
+                        div.item: img(src="images/vkontakte.svg", alt="")
+                        div.item: img(src="images/telegram_.svg", alt="")
+                    span мы в соцсетях
+
+            div.form
+                div.title
+                    h3 Обсудим ваш будущий стенд?
+                    span Заполните форму, и мы свяжемся с вами в самое ближайшее время
+                form
+                    input(type="text", name="name", placeholder="Имя")
+                    input(type="email", name="email", placeholder="Email*")
+                    input(type="tel", name="phone", placeholder="+7 (000) 000 00 00")
+
+                    label.checkbox
+                        input(type="checkbox", name="policy", checked)
+                        span Нажимая на кнопку, вы соглашаетесь с #[a(href="index.html") политикой конфиденциальности]
+
+                    button.gray_arrow
+                        span Отправить
+                        div.arrow
+                            include ../images/main_arrow.svg
+
+    div#map
+    img(src="images/5.webp").image
+

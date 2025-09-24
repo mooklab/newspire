@@ -1,0 +1,64 @@
+@import /pages/common/sass/_mixins
+
+@import sections/_intro
+
+section.services
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(l)
+        margin-top: 80px
+        margin-bottom: 80px
+    +s(m)
+        margin-top: 70px
+        margin-bottom: 70px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 50px
+        +s(xl)
+            grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 20px
+            grid-template-columns: repeat(2, 1fr)
+        +s(s)
+            grid-template-columns: 1fr
+
+    a.service
+        display: grid
+        align-content: space-between
+        counter-increment: services
+        border-radius: 5px
+        height: 344px
+        padding: 30px
+        background: white
+        +s(xl)
+            height: 292px
+            padding: 20px
+        +s(l)
+            height: 378px
+        +s(m)
+            height: 258px
+        +s(s)
+            height: 252px
+
+        &::before
+            content: '[ 0' counter(services) ' ]'
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+        span
+            color: #767676
+
+        &:hover
+            background: linear-gradient(42deg, #7f178d 0%, #ef8218 150%, #dcde38 200%)
+            color: white
+            span
+                color: white
+            &:before
+                background: linear-gradient(128deg, #ffff 0%, #ffff 100%)
+                background-clip: text

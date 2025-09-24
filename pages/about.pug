@@ -1,0 +1,79 @@
+extends common/pug/_layout.pug
+include sections/_intro.pug
+include sections/_certificates.pug
+include sections/_subscribe.pug
+
+block links
+    link(rel="stylesheet", href="css/about.css")
+
+block content
+    +intro('О компании', 'О компании', 'За каждым экспозицией — команда, влюблённая в своё дело. Строим пространство, которое говорит вместо слов')
+    
+    section.about
+        div.container
+
+            div.digits
+                div.digit
+                    span(data-text="+").digit 2000
+                    span.note разработанных и построенных #[br]стендов для компаний
+                div.digit
+                    span(data-text="+").digit 15
+                    span.note лет на рынке #[br]выставочных услуг
+                div.digit
+                    span(data-text="+").digit 90
+                    span.note экспертов, дизайнеров, #[br]инженеров, монтажников 
+                div.digit
+                    span(data-text="%").digit 100
+                    span.note выполненных проектов #[br]точно в срок
+
+            div.description
+                div.title
+                    span.subtitle [ Мы — голос за кадром ]
+                    h2 Производство
+                div.text
+                    p Мы — ваша команда поддержки на выставке. Та самая, что работает за кулисами, чтобы вы сияли в центре внимания. Наша идея проста: стенд — это первое знакомство клиента с вашим брендом. Мы делаем его ярким и запоминающимся.
+                    p Для нас это не просто конструкция. Мы создаём атмосферу, эмоции и настоящее приключение для ваших гостей. Продумываем каждый шаг, чтобы общение с вашим брендом было лёгким и захватывающим.
+                    p От самой смелой идеи до готового стенда на площадке — мы берём все заботы на себя. Вам остаётся только наслаждаться процессом и готовиться к встрече с новыми клиентами.
+                    p Нам доверяют IT-гиганты, фармацевтические компании, банки и промышленные предприятия. Для каждого мы находим именно то решение, которое расскажет его уникальную историю. Мы с вами горим одной целью — сделать ваш бренд главным героем на выставке. Давайте создадим что-то удивительное вместе!
+                div.video
+                    video(src="", poster="images/video.webp") 
+                    div.play
+                        img(src="images/play.svg")
+                        img(src="images/play_hover.svg")
+
+            div.advantages
+                div.title
+                    span.subtitle [ Нас выбирают за это ]
+                    h2 Каждый #[span стенд как перформанс] — и вот почему
+                div.list
+                    div.advantage
+                        img(src="images/advantage_icon_1.svg")
+                        h5 Собственное производство. Контроль качества и сроков
+                    div.advantage
+                        img(src="images/advantage_icon_2.svg")
+                        h5 Проекты любой сложности — по всей России и СНГ и мира
+                    div.advantage
+                        img(src="images/advantage_icon_3.svg")
+                        h5 Команда дизайнеров, инженеров, менеджеров
+                    div.advantage
+                        img(src="images/advantage_icon_4.svg")
+                        h5 Полный цикл: от идеи до демонтажа
+    
+    section.infographic
+        div.container
+
+            div.title
+                span.subtitle [ Индивидуальный подход ]
+                h2 Собираем вокруг проекта десятки других ролей — #[span все они усиливают идею]
+            span.text У каждого проекта своя история. Иногда для полной картины нужен флорист, иногда — бариста. Подберем команду, которая воплотит то, что вы задумали. Все ради одной цели: чтобы ваш стенд звучал в пространстве.
+            img(src="images/about_infographic_xxl.svg").xxl
+            img(src="images/about_infographic_xl.svg").xl
+            img(src="images/about_infographic_l.svg").l
+            img(src="images/about_infographic_m.svg").m
+            img(src="images/about_infographic_s.svg").s
+
+    +certificates('[ Сертификаты ]', '<span>Профессионализм</span> на бумаге — и в каждом проекте')
+    +subscribe('Готовы выделиться среди сотен безликих стендов?', 'Оставьте заявку и расскажите нам о вашем проекте. А мы создадим пространство, которое зазвучит: громко, ярко, по-настоящему')
+    
+
+    

@@ -1,0 +1,244 @@
+@import /pages/common/sass/_mixins
+
+@import sections/_intro
+@import sections/_projects
+@import sections/_subscribe
+
+section.about,
+section.advantages,
+section.process
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(l)
+        margin-top: 80px
+        margin-bottom: 80px
+    +s(m)
+        margin-top: 70px
+        margin-bottom: 70px
+    div.title
+        display: grid
+        grid-gap: 10px
+        +s(m)
+            grid-gap: 6px
+
+        span.subtitle
+            display: block
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+section.about
+
+    div.container
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 50px
+        +s(xl)
+            grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 20px
+            grid-template-columns: 1fr
+
+    div.text
+        max-width: 708px
+
+        h2
+            margin-bottom: 40px
+            +s(l)
+                margin-bottom: 30px
+            +s(m)
+                margin-bottom: 25px
+        p
+            margin-bottom: 15px
+            color: #767676
+        b
+            font-weight: 400
+            color: #2d252f
+        div.list
+            margin-top: 20px
+            +s(l)
+                margin-top: 15px
+            +s(m)
+                margin-top: 25px
+            +s(s)
+                p
+                    margin-bottom: 10px
+
+            ul
+                display: grid
+                grid-gap: 15px
+                margin-bottom: 20px
+                +s(s)
+                    grid-gap: 10px
+                li
+                    position: relative
+                    padding-left: 32px
+                    color: #767676
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: 6px
+                        left: 0
+                        display: block
+                        border-radius: 50px
+                        width: 10px
+                        height: 10px
+                        background: linear-gradient(137deg, #7f178d 0%, #ef8218 75.96%, #dcde38 98.56%)
+
+        div.note
+            display: grid
+            align-items: center
+            grid-template-columns: max-content 1fr
+            grid-gap: 20px
+            border-radius: 5px
+            background: linear-gradient(135deg, #7f178d 0%, #ef8218 100%)
+            padding: 30px
+            color: white
+            margin-top: 30px
+            +s(l)
+                margin-top: 20px
+                grid-gap: 15px
+            +s(m)
+                // align-items: start
+                max-width: 588px
+            +s(s)
+                grid-template-columns: 1fr
+                margin-top: 25px
+
+            img
+                +s(l)
+                    width: 30px
+                    height: 30px
+
+    img
+        width: 100%
+
+section.advantages
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(l)
+        margin-top: 80px
+        margin-bottom: 80px
+    +s(m)
+        margin-top: 70px
+        margin-bottom: 70px
+
+    div.container
+        display: grid
+        grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 25px
+
+    div.title
+        max-width: 846px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        grid-gap: 50px
+        +s(xl)
+            grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 20px
+            grid-template-columns: repeat(3, 1fr)
+        +s(s)
+            grid-template-columns: 1fr
+
+        div.advantage
+            display: grid
+            align-content: space-between
+            border-radius: 5px
+            height: 250px
+            padding: 30px
+            background: white
+            +s(xl)
+                height: 222px
+                padding: 20px
+            +s(l)
+                height: 208px
+            +s(m)
+                height: 229px
+            +s(s)
+                height: 131px
+
+            img
+                height: 50px
+                +s(m)
+                    height: 45px
+
+section.process
+    div.title
+        align-content: start
+        +s(m)
+            grid-column: 2 span
+            margin-bottom: 5px
+        +s(s)
+            grid-column: 1 span
+    div.container
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 50px
+        +s(xl)
+            grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(m)
+            grid-gap: 20px
+            grid-template-columns: repeat(2, 1fr)
+        +s(s)
+            grid-template-columns: 1fr
+
+    div.step
+        display: grid
+        align-content: start
+        counter-increment: services
+        border-radius: 5px
+        height: 314px
+        padding: 30px
+        background: white
+        border: 1px solid transparent
+        border-radius: 12px
+        background: linear-gradient(#F5F5F7, #F5F5F7) padding-box, linear-gradient(104deg, #7f178d 0%, #ef8218 75.96%, #dcde38 98.56%)
+        background-clip: text border-box
+        background-clip: padding-box, border-box
+        background-origin: padding-box, border-box
+        border-radius: 5px
+        grid-template-rows: 1fr max-content max-content
+        grid-gap: 20px
+        +s(xl)
+            height: 270px
+            padding: 20px
+            grid-gap: 15px
+        +s(l)
+            height: 255px
+        +s(m)
+            height: 201px
+        +s(s)
+            height: 189px
+
+        &::before
+            content: '[ 0' counter(services) ' ]'
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+        &:last-child
+            background: linear-gradient(42deg, #7f178d 19.06%, #ef8218 150%, #dcde38 200.54%) padding-box, linear-gradient(104deg, #7f178d 0%, #ef8218 75.96%, #dcde38 98.56%)
+            span, h4
+                color: white
+            &::before
+                background: linear-gradient(128deg, #ffff 0%, #ffff 100%)
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+
+        span
+            color: #767676

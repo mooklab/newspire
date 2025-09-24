@@ -1,0 +1,218 @@
+@import /pages/common/sass/_mixins
+
+@import sections/_projects
+@import sections/_certificates
+@import sections/_subscribe
+
+section.intro
+    height: 891px
+    overflow: hidden
+    +s(xl)
+        height: 720px
+    +s(l)
+        height: 614px
+    +s(xl)
+        height: 696px
+    +s(xl)
+        height: 630px
+
+    div.container
+        position: relative
+        height: max-content
+        z-index: 1
+
+        div.subtitle
+            background: #F5F5F7
+            padding-top: 100px
+            padding-bottom: 36px
+            +s(l)
+                padding-top: 60px
+                padding-bottom: 30px
+            +s(m)
+                padding-top: 100px
+                padding-bottom: 20px
+            +s(s)
+                padding-top: 80px
+                padding-bottom: 30px
+
+        div.title
+            display: grid
+            margin-top: -1px
+            margin-bottom: -1px
+
+            div
+                display: grid
+                line-height: 0
+
+            svg
+                width: 100%
+                height: auto
+
+            div.desktop
+                +s(m)
+                    display: none
+
+            div.mobile
+                display: none
+                +s(m)
+                    display: block
+
+        div.text
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 50px
+            background: #F5F5F7
+            padding-top: 50px
+            padding-bottom: 50px
+            +s(xl)
+                padding-top: 30px
+            +s(l)
+                padding-top: 30px
+                padding-bottom: 40px
+            +s(m)
+                padding-top: 20px
+            +s(s)
+                grid-auto-flow: row
+                grid-gap: 20px
+                padding-top: 30px
+                padding-bottom: 30px
+
+            span
+                display: block
+                color: #767676
+                max-width: 392px
+
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 100%
+            display: block
+            height: 100%
+            width: calc((100vw - 100%) / 2)
+            background: #F5F5F7
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 100%
+            display: block
+            height: 100%
+            width: calc((100vw - 100%) / 2)
+            background: #F5F5F7
+
+    img.background
+        grid-column: full
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+header
+    background: white
+
+section.services
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(l)
+        margin-top: 80px
+        margin-bottom: 80px
+    +s(m)
+        margin-top: 70px
+        margin-bottom: 70px
+
+    span.subtitle
+        display: block
+        background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        margin-bottom: 10px
+        +s(m)
+            margin-bottom: 6px
+
+    div.title
+        display: grid
+        grid-template-columns: 1fr max-content
+        grid-gap: 10px
+        margin-bottom: 40px
+        +s(l)
+            margin-bottom: 25px
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 25px
+
+        div.swiper-navigation
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            align-items: center
+            grid-gap: 35px
+            +s(m)
+                grid-template-columns: 1fr max-content
+
+            div.arrows
+                display: grid
+                grid-auto-flow: column
+                grid-auto-columns: max-content
+                grid-gap: 10px
+                div.prev, div.next
+                    cursor: pointer
+                    display: grid
+                    align-items: center
+                    justify-items: center
+                    background: white
+                    user-select: none
+                    border-radius: 3px
+                    width: 50px
+                    height: 50px
+                    &:hover
+                        background: linear-gradient(133deg, #7f178d 0%, #ef8218 78.55%, #dcde38 100%)
+                        svg
+                            path
+                                stroke: white
+                div.next
+                    transform: rotate(180deg)
+
+    div.swiper
+        counter-reset: services
+
+    a.service
+        display: grid
+        align-content: space-between
+        counter-increment: services
+        border-radius: 5px
+        height: 572px
+        padding: 30px
+        background: white
+        +s(xl)
+            height: 474px
+            padding: 20px
+        +s(l)
+            height: 378px
+        +s(m)
+            height: 436px
+        +s(s)
+            height: 388px
+
+        &::before
+            content: '[ 0' counter(services) ' ]'
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+        span
+            color: #767676
+
+        &:hover
+            background: linear-gradient(42deg, #7f178d 0%, #ef8218 150%, #dcde38 200%)
+            color: white
+            span
+                color: white
+            &:before
+                background: linear-gradient(128deg, #ffff 0%, #ffff 100%)
+                background-clip: text

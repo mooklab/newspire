@@ -1,0 +1,69 @@
+extends common/pug/_layout.pug
+include common/pug/_mixins.pug
+
+block links
+    link(rel="stylesheet", href="css/project.css")
+
+block content
+
+    section.intro
+        div.container
+
+            a(href="index.html").back
+                include ../images/main_arrow.svg
+
+            div.breadcrumbs
+                a(href="index.html") Главная 
+                a(href="index.html") Проекты 
+                span АгроЭко Duroc
+        
+            div.text
+                h1.title АгроЭко Duroc
+                span.description Масштабный проект для «АгроЭко» на Gastreet Show: из влагостойких материалов и с вечерней подсветкой
+                div.details
+                    div.detail
+                        span Выставка
+                        p Gastreet Show
+                    div.detail
+                        span Место проведения
+                        p Сочи
+                    div.detail
+                        span Год
+                        p 2025
+                    div.detail
+                        span Площадь
+                        p 15м2
+                button.gray_arrow
+                    span Обсудить проект
+                    div.arrow
+                        include ../images/main_arrow.svg
+
+        img(src="images/7.webp").background
+
+    section.gallery
+        div.container
+            div.list
+                div.two
+                    img(src="images/6.webp", alt="")
+                    img(src="images/6.webp", alt="")
+                img(src="images/6.webp", alt="")
+                img(src="images/6.webp", alt="")
+                div.two
+                    img(src="images/6.webp", alt="")
+                    img(src="images/6.webp", alt="")
+                img(src="images/6.webp", alt="")
+                img(src="images/6.webp", alt="")
+                img(src="images/6.webp", alt="")
+                img(src="images/6.webp", alt="")
+            div.controls
+                a(href="index.html").prev
+                    img(src="images/watch_project.svg", alt="")
+                    span Предыдущий кейс
+                a(href="index.html").next
+                    span Следующий кейс
+                    img(src="images/watch_project.svg", alt="")
+
+
+
+
+

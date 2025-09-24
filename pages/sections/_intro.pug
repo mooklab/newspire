@@ -1,0 +1,14 @@
+mixin intro(title, datatitle, text)
+    section.intro
+        div.container
+
+            a(href="index.html").back
+                include ../../images/main_arrow.svg
+
+            div.breadcrumbs
+                a(href="index.html") Главная 
+                span= datatitle
+        
+            div.text
+                h1(data-text=datatitle)= title
+                span= text

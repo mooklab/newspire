@@ -1,0 +1,124 @@
+header
+    height: 100px
+    +s(l)
+        height: 89px
+    +s(m)
+        height: 75px
+
+    div.container
+        display: grid
+        grid-auto-flow: column
+        justify-content: space-between
+        align-items: center
+        +s(1200px)
+            grid-template-columns: max-content 1fr max-content
+            justify-content: start
+            grid-gap: 42px
+        +s(s)
+            grid-template-columns: repeat(3, max-content)
+            justify-content: space-between
+            grid-gap: 30px
+
+    a.logotype
+        img
+            width: 160px
+            +s(xl)
+                width: 125px
+            +s(l)
+                width: 102px
+            +s(m)
+                width: 102px
+
+    div.partners
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        grid-gap: 79px
+        +s(xl)
+            grid-gap: 50px
+            a:nth-child(1)
+                img
+                    width: 55px
+            a:nth-child(2)
+                img
+                    width: 72px
+        +s(l)
+            grid-gap: 30px
+            a:nth-child(1)
+                img
+                    width: 44px
+            a:nth-child(2)
+                img
+                    width: 58px
+        +s(s)
+            grid-gap: 20px
+            a:nth-child(1)
+                img
+                    width: 38px
+            a:nth-child(2)
+                img
+                    width: 50px
+
+    menu
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        grid-gap: 50px
+        +s(xl)
+            grid-gap: 40px
+        +s(l)
+            grid-gap: 30px
+        +s(1200px)
+            display: none
+
+        a
+            font-weight: 400
+            font-size: 18px
+            line-height: 140%
+            color: #767676
+            +s(l)
+                font-size: 16px
+
+    div.contacts
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        align-items: center
+        grid-gap: 20px
+        +s(1200px)
+            display: none
+
+        a
+            font-weight: 500
+            font-size: 22px
+            line-height: 130%
+            color: #767676
+            +s(xl)
+                font-size: 20px
+                line-height: 120%
+            +s(l)
+                font-size: 18px
+                line-height: 120%
+
+            &:hover
+                background: linear-gradient(128deg, #7f178d 0%, #ef8218 54.33%, #dcde38 98.08%)
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+
+        div.socials
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 10px
+            +s(l)
+                grid-gap: 8px
+
+            img
+                +s(xl)
+                    width: 30px
+
+    img.menu
+        display: none
+        +s(1200px)
+            display: block

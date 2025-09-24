@@ -1,0 +1,26 @@
+mixin certificates(type, title)
+    section.certificates
+        div.container
+
+            span.subtitle= type
+
+            div.title
+                h2 !{title}
+                div.swiper-navigation
+                    img(src="images/hand_swipe.svg")
+                    div.arrows
+                        div.prev
+                            include ../../images/main_arrow.svg
+                        div.next
+                            include ../../images/main_arrow.svg
+
+
+            div.swiper
+                div.swiper-wrapper
+                    - for (var i = 0; i < 10; i++)
+                        div.swiper-slide
+                            div.preview
+                                img(src="images/1.webp", alt="")
+                            a(href="index.html")
+                                span Смотреть проект
+                                img(src="images/watch_project.svg", alt="")

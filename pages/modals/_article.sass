@@ -1,0 +1,97 @@
+dialog[data-modal-name=article]
+    display: grid
+    justify-content: end
+    height: 100%
+    width: 100%
+    max-height: unset
+    max-width: unset
+    background: transparent
+
+    div.container
+        display: grid
+        align-content: start
+        justify-items: center
+        width: 1082px
+        height: 100%
+        background: white
+        padding: unset
+        +s(xl)
+            width: 902px
+        +s(l)
+            width: 771px
+        +s(m)
+            width: 748px
+        +s(s)
+            width: 360px
+
+    div.cross
+        display: grid
+        grid-template-columns: repeat(2, max-content)
+        grid-gap: 12px
+        position: absolute
+        top: 30px
+        right: 30px
+        color: white
+        +s(l)
+            top: 20px
+            right: 20px
+        +s(s)
+            top: 15px
+            right: 15px
+        svg
+            width: 20px
+            height: 20px
+            path
+                stroke: white
+
+    img.preview
+        width: 100%
+        height: 441px
+        object-fit: cover
+        +s(xl)
+            height: 367px
+        +s(l)
+            height: 311px
+        +s(m)
+            height: 301px
+        +s(s)
+            height: 192px
+
+    div.text
+        max-width: 688px
+        padding: 60px
+        +s(xl)
+            padding: 50px
+        +s(l)
+            padding: 40px
+            max-width: 588px
+        +s(s)
+            padding: 20px
+
+        span.date
+            display: grid
+            align-items: center
+            grid-template-columns: repeat(2, max-content)
+            grid-gap: 8px
+            text-align: right
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            margin-bottom: 10px
+            &:before
+                content: ''
+                display: block
+                width: 8px
+                height: 8px
+                background: #7f178d
+                border-radius: 4px
+
+        h3
+            margin-bottom: 40px
+
+        p + p
+            margin-top: 1em
+
+        p
+            color: #767676

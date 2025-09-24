@@ -1,0 +1,15 @@
+mixin select(name, title, ...items)
+    fieldset.select(class=name)
+        div(tabindex="0").select_current
+            input(type="radio", id=name, value=title, name=name, checked)
+            span= title
+            each item, index in items
+                //- - index == 0 ? checked = true : checked = false
+                input(type="radio", id=name + '_' + index, value=item, name=name)
+                span= item
+            div.arrow
+                include ../../../images/select_arrow.svg
+        div.select_list
+            block
+            each item, index in items
+                label(for=name + '_' + index)= item

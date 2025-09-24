@@ -1,0 +1,25 @@
+dialog(data-modal-name="callback")
+    div.container
+
+        div(data-modal-close).cross
+            include ../../images/modal_cross.svg
+            span Закрыть
+
+        div.content
+            div.form
+                div.title
+                    h3 Обсудим ваш будущий стенд?
+                    span Заполните форму, и мы свяжемся с вами в самое ближайшее время
+                form
+                    input(type="text", name="name", placeholder="Имя")
+                    input(type="email", name="email", placeholder="Email*")
+                    input(type="tel", name="phone", placeholder="+7 (000) 000 00 00")
+
+                    label.checkbox
+                        input(type="checkbox", name="policy", checked)
+                        span Нажимая на кнопку, вы соглашаетесь с #[a(href="index.html") политикой конфиденциальности]
+
+                    button.gray_arrow
+                        span Отправить
+                        div.arrow
+                            include ../../images/main_arrow.svg
