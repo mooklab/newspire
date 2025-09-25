@@ -110,7 +110,7 @@ window.onload = () => {
             toggleActions: 'play none none reverse',
             // scrub: true,
             // pin: true,
-            markers: true
+            // markers: true
         }
     })
 
@@ -121,7 +121,7 @@ window.onload = () => {
             end: 'center center',
             toggleActions: 'play none none reverse',
             // scrub: true,
-            markers: true
+            // markers: true
         }
     })
     about_timeline
