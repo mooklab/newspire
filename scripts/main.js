@@ -98,7 +98,7 @@ window.onload = () => {
 
     projects = document.querySelector('section.projects')
     gsap.fromTo(projects, {
-        y: '300',
+        y: '200',
         opacity: 0
     }, {
         y: 0,

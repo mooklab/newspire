@@ -710,12 +710,22 @@ html:has(dialog[open]) {
   margin-right: var(--scrollbar-width);
 }
 
+dialog {
+  opacity: 0;
+  -webkit-animation-name: dialog;
+          animation-name: dialog;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
 dialog::-ms-backdrop {
   position: fixed;
   inset: 0px;
   background: rgba(20, 0, 22, 0.6);
 }
-
 dialog::backdrop {
   position: fixed;
   inset: 0px;
@@ -728,7 +738,35 @@ dialog::-webkit-scrollbar {
 dialog div.cross {
   cursor: pointer;
 }
+dialog div.cross:hover img {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
 
+@-webkit-keyframes dialog {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes dialog {
+  0% {
+    opacity: 0;
+    left: 100%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
 dialog[data-modal-name=article] {
   display: grid;
   -webkit-box-pack: end;
