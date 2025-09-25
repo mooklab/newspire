@@ -5,6 +5,18 @@ include sections/_intro.pug
 block links
     link(rel="stylesheet", href="css/projects.css")
 
+mixin project(title, image)
+    a(href="project.html").project
+        div.preview
+            img(src=image, alt="ГК «ЭФКО»")
+            div.tags
+                span Международные проекты
+                span Остров
+                span 2025
+        div.text
+            h5= title
+            span 15м2
+
 block content
     +intro('Проекты со своей историей', 'Проекты', 'Сделано больше 2000 проектов по всей стране, и каждый — со своей историей')
 
@@ -17,17 +29,18 @@ block content
                 +select('area','Площадь', 'Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4')
 
             div.list
-                - for (var i = 0; i < 12; i++)
-                    a(href="project.html").project
-                        div.preview
-                            img(src="images/3.webp", alt="ГК «ЭФКО»")
-                            div.tags
-                                span Международные проекты
-                                span Остров
-                                span 2025
-                        div.text
-                            h5 ГК «ЭФКО»
-                            span 15м2
+                +project('ГК «ЭФКО»', 'images/3.webp')
+                +project('ГК «ЭФКО»', 'images/4.webp')
+                +project('ГК «ЭФКО»', 'images/5.webp')
+                +project('ГК «ЭФКО»', 'images/6.webp')
+                +project('ГК «ЭФКО»', 'images/7.webp')
+                +project('ГК «ЭФКО»', 'images/3.webp')
+                +project('ГК «ЭФКО»', 'images/4.webp')
+                +project('ГК «ЭФКО»', 'images/5.webp')
+                +project('ГК «ЭФКО»', 'images/6.webp')
+                +project('ГК «ЭФКО»', 'images/7.webp')
+                +project('ГК «ЭФКО»', 'images/3.webp')
+                +project('ГК «ЭФКО»', 'images/4.webp')
 
             div.controls
                 div.pagination

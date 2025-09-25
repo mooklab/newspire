@@ -2,6 +2,18 @@ extends common/pug/_layout.pug
 include common/pug/_mixins.pug
 include sections/_intro.pug
 
+mixin article(title, image)
+    div(data-modal-target="article").article
+        div.preview
+            img(src=image, alt="ГК «ЭФКО»")
+        div.text
+            h5= title
+        div.details
+            span.date 10 мая, 2025
+            a(href="index.html")
+                span Подробнее
+                img(src="images/watch_project.svg")
+
 block links
     link(rel="stylesheet", href="css/news.css")
 
@@ -26,17 +38,18 @@ block content
                     span 2023
 
             div.list
-                - for (var i = 0; i < 12; i++)
-                    div(data-modal-target="article").article
-                        img(src="images/3.webp", alt="ГК «ЭФКО»").preview
-                        div.text
-                            h5 Застройка для ГК «ЭФКО»
-                            span Создать эффектный двухэтажный стенд, который будет заметным, атмосферным, подчеркивая уровень бренда на фоне других участников
-                        div.details
-                            span.date 10 мая, 2025
-                            a(href="index.html")
-                                span Подробнее
-                                img(src="images/watch_project.svg")
+                +article('Застройка для ГК «ЭФКО»', 'images/3.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/4.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/5.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/6.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/7.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/3.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/4.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/5.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/6.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/7.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/3.webp')
+                +article('Застройка для ГК «ЭФКО»', 'images/4.webp')
 
             div.controls
                 div.pagination
