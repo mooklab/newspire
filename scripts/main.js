@@ -76,3 +76,58 @@ forms.forEach(form => {
     })
 
 })
+
+window.onload = () => {
+
+    main = document.querySelector('section.intro.scrollup')
+    main_container = document.querySelector('section.intro.scrollup div.container')
+
+    gsap.fromTo(main_container, {
+        y: 0
+    }, {
+        y: '-=500',
+        scrollTrigger: {
+            trigger: main,
+            start: 'top 0px',
+            end: '+=460',
+            scrub: true,
+            pin: true,
+            // markers: true
+        }
+    })
+
+    projects = document.querySelector('section.projects')
+    gsap.fromTo(projects, {
+        y: '300',
+        opacity: 0
+    }, {
+        y: 0,
+        opacity: 1,
+        scrollTrigger: {
+            trigger: 'section.projects div.list',
+            start: 'start bottom',
+            end: 'start bottom',
+            toggleActions: 'play none none reverse',
+            // scrub: true,
+            // pin: true,
+            markers: true
+        }
+    })
+
+    about_timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: 'section.infographic',
+            start: 'top center',
+            end: 'center center',
+            toggleActions: 'play none none reverse',
+            // scrub: true,
+            markers: true
+        }
+    })
+    about_timeline
+        .fromTo('section.infographic span.subtitle', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 })
+        .fromTo('section.infographic h2', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, "-=0.7")
+        .fromTo('section.infographic span.text', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, "-=0.7")
+        .fromTo('section.infographic img', { opacity: 0, y: 50 }, { opacity: 1, y: 0 })
+
+}

@@ -56,8 +56,16 @@ section.contacts
             grid-gap: 6px
             +s(m)
                 grid-gap: 5px
-            a, span
+
+            & > a, span
                 color: rgba(17, 14, 17, 0.4)
+
+            h4 > a
+                &:hover
+                    background: linear-gradient(147deg, #7f178d 0%, #ef8218 75.96%, #dcde38 98.56%)
+                    background-clip: text
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
 
             div.dot
                 display: block
@@ -79,7 +87,7 @@ section.contacts
             div.list
                 display: flex
                 gap: 10px
-                div.item
+                a.item
                     display: grid
                     align-items: center
                     justify-items: center
@@ -90,6 +98,8 @@ section.contacts
                     +s(l)
                         width: 50px
                         height: 50px
+                    &:hover
+                        background: #e6e6e6
                 img
                     width: 20px
                     height: 20px

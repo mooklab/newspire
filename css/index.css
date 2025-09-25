@@ -436,36 +436,35 @@ section.subscribe div.form button.gray_arrow {
   background: white;
 }
 
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
 section.intro {
-  height: 891px;
+  height: 100vh;
   overflow: hidden;
-}
-@media (max-width: 1620px) {
-  section.intro {
-    height: 720px;
-  }
-}
-@media (max-width: 1400px) {
-  section.intro {
-    height: 614px;
-  }
-}
-@media (max-width: 1620px) {
-  section.intro {
-    height: 696px;
-  }
-}
-@media (max-width: 1620px) {
-  section.intro {
-    height: 630px;
-  }
 }
 section.intro div.container {
   position: relative;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  padding-top: 100px;
   z-index: 1;
+}
+@media (max-width: 1400px) {
+  section.intro div.container {
+    padding-top: 89px;
+  }
+}
+@media (max-width: 960px) {
+  section.intro div.container {
+    padding-top: 75px;
+  }
 }
 section.intro div.container div.subtitle {
   background: #F5F5F7;

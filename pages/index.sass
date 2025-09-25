@@ -4,22 +4,35 @@
 @import sections/_certificates
 @import sections/_subscribe
 
+header
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 2
+
 section.intro
-    height: 891px
+    // height: 891px
+    height: 100vh
     overflow: hidden
-    +s(xl)
-        height: 720px
-    +s(l)
-        height: 614px
-    +s(xl)
-        height: 696px
-    +s(xl)
-        height: 630px
+    // +s(xl)
+    //     height: 720px
+    // +s(l)
+    //     height: 614px
+    // +s(xl)
+    //     height: 696px
+    // +s(xl)
+    //     height: 630px
 
     div.container
         position: relative
         height: max-content
+        padding-top: 100px
         z-index: 1
+        +s(l)
+            padding-top: 89px
+        +s(m)
+            padding-top: 75px
 
         div.subtitle
             background: #F5F5F7

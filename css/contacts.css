@@ -207,14 +207,23 @@ section.contacts div.contacts div.shedule {
     grid-gap: 5px;
   }
 }
-section.contacts div.contacts div.phone a, section.contacts div.contacts div.phone span,
-section.contacts div.contacts div.adress a,
+section.contacts div.contacts div.phone > a, section.contacts div.contacts div.phone span,
+section.contacts div.contacts div.adress > a,
 section.contacts div.contacts div.adress span,
-section.contacts div.contacts div.email a,
+section.contacts div.contacts div.email > a,
 section.contacts div.contacts div.email span,
-section.contacts div.contacts div.shedule a,
+section.contacts div.contacts div.shedule > a,
 section.contacts div.contacts div.shedule span {
   color: rgba(17, 14, 17, 0.4);
+}
+section.contacts div.contacts div.phone h4 > a:hover,
+section.contacts div.contacts div.adress h4 > a:hover,
+section.contacts div.contacts div.email h4 > a:hover,
+section.contacts div.contacts div.shedule h4 > a:hover {
+  background: linear-gradient(147deg, #7f178d 0%, #ef8218 75.96%, #dcde38 98.56%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 section.contacts div.contacts div.phone div.dot,
 section.contacts div.contacts div.adress div.dot,
@@ -262,8 +271,8 @@ section.contacts div.contacts div.messengers div.list {
   display: flex;
   gap: 10px;
 }
-section.contacts div.contacts div.socials div.list div.item,
-section.contacts div.contacts div.messengers div.list div.item {
+section.contacts div.contacts div.socials div.list a.item,
+section.contacts div.contacts div.messengers div.list a.item {
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -275,11 +284,15 @@ section.contacts div.contacts div.messengers div.list div.item {
   background: #f5f5f7;
 }
 @media (max-width: 1400px) {
-  section.contacts div.contacts div.socials div.list div.item,
-  section.contacts div.contacts div.messengers div.list div.item {
+  section.contacts div.contacts div.socials div.list a.item,
+  section.contacts div.contacts div.messengers div.list a.item {
     width: 50px;
     height: 50px;
   }
+}
+section.contacts div.contacts div.socials div.list a.item:hover,
+section.contacts div.contacts div.messengers div.list a.item:hover {
+  background: #e6e6e6;
 }
 section.contacts div.contacts div.socials div.list img,
 section.contacts div.contacts div.messengers div.list img {
