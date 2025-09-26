@@ -7,8 +7,8 @@ mixin certificates(type, title)
             div.title
                 h2 !{title}
                 div.swiper-navigation
-                    img(src="images/hand_swipe.svg")
-                    div.arrows
+                    img(src="images/hand_swipe.svg").hand_swiper
+                    div.swiper-arrows
                         div.prev
                             include ../../images/main_arrow.svg
                         div.next
@@ -19,8 +19,9 @@ mixin certificates(type, title)
                 div.swiper-wrapper
                     - for (var i = 0; i < 10; i++)
                         div.swiper-slide
-                            div.preview
-                                img(src="images/1.webp", alt="")
-                            a(href="index.html")
+                            a(href="project.html").preview
+                                img(src="images/1.webp", alt="").preview
+                                img(src="images/zoom.svg", alt="").zoom
+                            a.link
                                 span Смотреть проект
                                 img(src="images/watch_project.svg", alt="")

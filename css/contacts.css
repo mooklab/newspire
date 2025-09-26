@@ -434,27 +434,27 @@ img.image {
   width: 100%;
 }
 
-div#map {
+div.map {
   width: 100%;
   height: 600px;
 }
 @media (max-width: 1620px) {
-  div#map {
+  div.map {
     height: 502px;
   }
 }
 @media (max-width: 1400px) {
-  div#map {
+  div.map {
     height: 429px;
   }
 }
 @media (max-width: 960px) {
-  div#map {
+  div.map {
     height: 308px;
   }
 }
 @media (max-width: 640px) {
-  div#map {
+  div.map {
     height: 150px;
   }
 }/*# sourceMappingURL=contacts.css.map */

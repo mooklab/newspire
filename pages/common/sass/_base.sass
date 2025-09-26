@@ -16,14 +16,19 @@
     --content: min(var(--content-width), 100% - var(--gap) * 2)
     --breakout: minmax(0, 100px)
     --content-width: 1720px
+    --layout-gap: 50px
     +s(xl)
         --gap: 90px
+        --layout-gap: 40px
     +s(l)
         --gap: 80px
+        --layout-gap: 30px
     +s(m)
         --gap: 20px
+        --layout-gap: 20px
     +s(s)
         --gap: 15px
+        --layout-gap: 15px
 
 html, body
     font-family: SF Pro Display, sans-serif

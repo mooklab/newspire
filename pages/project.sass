@@ -11,17 +11,8 @@ header
     background: white
 
 section.intro
-    // height: 869px
     height: 100vh
     padding: unset
-    // +s(xl)
-    //     height: 725px
-    // +s(l)
-    //     height: 619px
-    // +s(m)
-    //     height: 538px
-    // +s(l)
-    //     height: 705px
 
     div.container
         position: relative
@@ -151,26 +142,15 @@ section.gallery
             +s(l)
                 height: 206px
 
-    a.prev,
-    a.next
-        display: grid
-        grid-auto-flow: column
-        grid-auto-columns: max-content
+    div.navigation
+        display: flex
         align-items: center
-        font-weight: 400
-        font-size: 18px
-        line-height: 140%
+        justify-content: space-between
+        margin-top: 40px
         +s(l)
-            font-size: 16px
-
-        &:hover
-            background: linear-gradient(128deg, #7f178d 0%, #ef8218 54.33%, #dcde38 98.08%)
-            background-clip: text
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
-
-        img
-            margin-left: 3px
+            margin-top: 30px
+        +s(m)
+            margin-top: 25px
 
     a.prev
         img

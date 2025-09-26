@@ -13,3 +13,21 @@ mixin select(name, title, ...items)
             block
             each item, index in items
                 label(for=name + '_' + index)= item
+
+mixin project(title, image)
+    a(href="project.html").project
+        div.preview
+            img(src=image, alt=title)
+            div.tags
+                span Международные проекты
+                span Остров
+                span 2025
+        div.text
+            div.main_info
+                h5= title
+                span 15м2
+            div.additional_info
+                div.info_overflow
+                    div.info_wrap
+                        span 2025, Сочи
+                        span Gastreet Show

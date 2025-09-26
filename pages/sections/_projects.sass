@@ -19,13 +19,6 @@ section.projects
             margin-bottom: 25px
             grid-gap: 6px
 
-        span.subtitle
-            display: block
-            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
-            background-clip: text
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
-
     div.list
         display: grid
         grid-template-columns: repeat(2, 1fr)
@@ -40,90 +33,13 @@ section.projects
             grid-template-columns: 1fr
             grid-gap: 15px
 
-    a.project
-        border-radius: 5px
-        overflow: hidden
-        background: white
-        div.preview
-            position: relative
-            width: 100%
-            aspect-ratio: 16 / 9
-            img
-                position: absolute
-                top: 0
-                left: 0
-                width: 100%
-                height: 100%
-                object-fit: cover
-            div.tags
-                position: absolute
-                top: 30px
-                left: 30px
-                width: calc(100% - 60px)
-                display: flex
-                flex-wrap: wrap
-                gap: 5px
-                +s(xl)
-                    top: 20px
-                    left: 20px
-                +s(m)
-                    top: 15px
-                    left: 15px
-                +s(s)
-                    top: 10px
-
-                span
-                    border-radius: 50px
-                    padding: 10px 15px
-                    height: 35px
-                    backdrop-filter: blur(10px)
-                    background: rgba(255, 255, 255, 0.3)
-                    font-weight: 400
-                    font-size: 14px
-                    line-height: 110%
-                    text-align: center
-                    color: white
-                    +s(m)
-                        font-size: 12px
-
-        div.text
-            display: grid
-            align-items: center
-            grid-template-columns: 1fr max-content
-            padding: 30px
-            +s(xl)
-                padding: 20px
-            +s(l)
-                padding: 16px 20px
-            +s(m)
-                padding: 15px
-
-            span
-                color: #767676
-
-    a.more
+    a.link
         display: grid
         justify-content: center
-        grid-auto-flow: column
-        grid-auto-columns: max-content
-        align-items: center
-        font-weight: 400
-        font-size: 18px
-        line-height: 140%
         margin-top: 40px
         +s(l)
-            font-size: 16px
             margin-top: 30px
         +s(m)
             margin-top: 25px
         +s(s)
             margin-top: 15px
-
-        &:hover
-            background: linear-gradient(128deg, #7f178d 0%, #ef8218 54.33%, #dcde38 98.08%)
-            background-clip: text
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
-
-        img
-            margin-left: 3px

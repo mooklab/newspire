@@ -60,6 +60,7 @@ dialog[data-modal-name=article]
     div.text
         max-width: 688px
         padding: 60px
+        box-sizing: content-box
         +s(xl)
             padding: 50px
         +s(l)
@@ -79,6 +80,7 @@ dialog[data-modal-name=article]
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
             margin-bottom: 10px
+            width: max-content
             &:before
                 content: ''
                 display: block

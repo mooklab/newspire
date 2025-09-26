@@ -1,0 +1,27 @@
+dialog(data-modal-name="menu")
+    div.container
+
+        div(data-modal-close).cross
+            //- include ../../images/modal_cross.svg
+            img(src="images/modal_cross.svg", alt="")
+
+        div.content
+            menu
+                a(href="projects.html") Проекты
+                a(href="services.html") Услуги
+                a(href="about.html") О компании
+                a(href="news.html") Блог
+                a(href="contacts.html") Контакты
+            div.contacts
+                div.phone
+                    h4: a(href="tel:89777667110") 8 (977) 766 71 10
+                    a(href="") заказать обратный звонок
+                div.email
+                    h4: a(href="mailto:info@newspire.ru") info@newspire.ru
+                    span г. Химки, ул. Рабочая д.2Ак3
+                div.messengers 
+                    div.list
+                        a(href="index.html").item: img(src="images/vkontakte.svg", alt="")
+                        a(href="index.html").item: img(src="images/whatsapp_.svg", alt="")
+                        a(href="index.html").item: img(src="images/telegram_.svg", alt="")
+                    span месседжеры

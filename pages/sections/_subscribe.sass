@@ -9,12 +9,9 @@ section.subscribe
     div.container
         display: grid
         grid-template-columns: repeat(2, 1fr)
-        grid-gap: 50px
-        +s(m)
-            grid-gap: 20px
+        grid-gap: var(--layout-gap)
         +s(s)
             grid-template-columns: 1fr
-            grid-gap: 32px
 
     div.text
         max-width: 760px
@@ -33,12 +30,20 @@ section.subscribe
                 margin-bottom: 20px
 
     div.form
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        grid-gap: var(--layout-gap)
 
         form
             display: grid
             grid-gap: 20px
+            grid-column: 4 span
+            +s(xl)
+                grid-column: 5 span
             +s(l)
                 grid-gap: 15px
+            +s(m)
+                grid-column: 6 span
 
         label.checkbox
             display: grid
@@ -57,3 +62,4 @@ section.subscribe
 
         button.gray_arrow
             background: white
+            color: #2D252F

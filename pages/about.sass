@@ -177,13 +177,8 @@ section.about
         div.list
             display: grid
             grid-template-columns: repeat(4, 1fr)
-            grid-gap: 50px
-            +s(xl)
-                grid-gap: 40px
-            +s(l)
-                grid-gap: 30px
+            grid-gap: var(--layout-gap)
             +s(m)
-                grid-gap: 20px
                 grid-template-columns: repeat(2, 1fr)
             +s(s)
                 grid-template-columns: 1fr
@@ -236,11 +231,7 @@ section.infographic
             grid-gap: 6px
 
         span.subtitle
-            display: block
-            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
-            background-clip: text
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
+            justify-self: center
 
     span.text
         display: block

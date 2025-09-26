@@ -33,10 +33,13 @@ block content
                     div.detail
                         span Площадь
                         p 15м2
-                button.gray_arrow
+                button(data-modal-target="callback").gray_arrow
                     span Обсудить проект
                     div.arrow
-                        include ../images/main_arrow.svg
+                        div.icon
+                            img(src="images/single_arrow.svg")
+                            img(src="images/single_arrow.svg")
+                            img(src="images/single_arrow.svg")
 
         img(src="images/7.webp").background
 
@@ -55,11 +58,11 @@ block content
                 img(src="images/6.webp", alt="")
                 img(src="images/6.webp", alt="")
                 img(src="images/6.webp", alt="")
-            div.controls
-                a(href="index.html").prev
+            div.navigation
+                a(href="index.html").prev.link
                     img(src="images/watch_project.svg", alt="")
                     span Предыдущий кейс
-                a(href="index.html").next
+                a(href="index.html").next.link
                     span Следующий кейс
                     img(src="images/watch_project.svg", alt="")
 

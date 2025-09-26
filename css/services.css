@@ -159,19 +159,11 @@ section.services div.list {
   }
 }
 section.services a.service {
-  display: grid;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  counter-increment: services;
-  border-radius: 5px;
   height: 344px;
-  padding: 30px;
-  background: white;
 }
 @media (max-width: 1620px) {
   section.services a.service {
     height: 292px;
-    padding: 20px;
   }
 }
 @media (max-width: 1400px) {
@@ -188,26 +180,4 @@ section.services a.service {
   section.services a.service {
     height: 252px;
   }
-}
-section.services a.service::before {
-  content: "[ 0" counter(services) " ]";
-  background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-section.services a.service span {
-  color: #767676;
-}
-section.services a.service:hover {
-  background: linear-gradient(42deg, #7f178d 0%, #ef8218 150%, #dcde38 200%);
-  color: white;
-}
-section.services a.service:hover span {
-  color: white;
-}
-section.services a.service:hover:before {
-  background: linear-gradient(128deg, white 0%, white 100%);
-  -webkit-background-clip: text;
-          background-clip: text;
 }/*# sourceMappingURL=services.css.map */

@@ -249,7 +249,9 @@ div.controls
         grid-auto-flow: column
         grid-auto-columns: max-content
         grid-gap: 5px
+
         a, span
+            position: relative
             display: grid
             align-items: center
             justify-items: center
@@ -260,27 +262,298 @@ div.controls
             font-weight: 400
             font-size: 14px
             line-height: 120%
+            z-index: 1
+            overflow: hidden
             +s(s)
                 font-size: 13px
+
+        a::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            display: block
+            width: 100%
+            height: 100%
+            background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%)
+            transition: opacity 0.5s
+            opacity: 0
+            z-index: -1
+
         span
             background: transparent
+            pointer-events: none
 
         a.active
-            background: linear-gradient(125deg, #7f178d 0%, #ef8218 71.63%, #dcde38 98.56%)
             color: white
+            &::before
+                width: 300%
+                opacity: 1
 
         a:hover
-            background: linear-gradient(125deg, #7f178d 0%, #ef8218 150%, #dcde38 200%)
             color: white
+            &::before
+                opacity: 1
 
     a.more
+        position: relative
         border-radius: 3px
         padding: 18px 30px
         height: 55px
-        background: linear-gradient(125deg, #7f178d 0%, #ef8218 71.63%, #dcde38 98.56%)
         color: white
+        overflow: hidden
+        z-index: 1
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            display: block
+            width: 100%
+            height: 100%
+            background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%)
+            transition: width 0.5s
+            z-index: -1
         &:hover
-            background: linear-gradient(125deg, #7f178d 0%, #ef8218 150%, #dcde38 200%)
+            &::before
+                width: 300%
+
+a.link
+    display: grid
+    grid-auto-flow: column
+    grid-auto-columns: max-content
+    align-items: center
+    font-weight: 400
+    font-size: 18px
+    line-height: 140%
+    +s(l)
+        font-size: 16px
+
+    &:hover
+        span
+            background: linear-gradient(128deg, #7f178d 0%, #ef8218 50%, #dcde38 100%)
+            background-clip: text
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+    img
+        margin-left: 3px
+
+a.project
+    display: grid
+    grid-template-rows: 1fr max-content
+    border-radius: 5px
+    overflow: hidden
+    background: white
+    height: 588px
+    +s(xl)
+        height: 483px
+    +s(l)
+        height: 411px
+    +s(m)
+        height: 263px
+    +s(s)
+        height: 258px
+
+    div.preview
+        position: relative
+        width: 100%
+        height: 100%
+        overflow: hidden
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            transition: all 0.3s
+        div.tags
+            position: absolute
+            top: 30px
+            left: 30px
+            width: calc(100% - 60px)
+            display: flex
+            flex-wrap: wrap
+            gap: 5px
+            +s(xl)
+                top: 20px
+                left: 20px
+            +s(m)
+                top: 15px
+                left: 15px
+            +s(s)
+                top: 10px
+
+            span
+                border-radius: 50px
+                padding: 10px 15px
+                height: 35px
+                backdrop-filter: blur(10px)
+                background: rgba(255, 255, 255, 0.3)
+                font-weight: 400
+                font-size: 14px
+                line-height: 110%
+                text-align: center
+                color: white
+                +s(m)
+                    font-size: 12px
+
+    div.text
+        padding: 30px
+        +s(xl)
+            padding: 20px
+        +s(l)
+            padding: 16px 20px
+        +s(m)
+            padding: 15px
+
+        div.main_info
+            display: grid
+            align-items: center
+            grid-template-columns: 1fr max-content
+
+        div.additional_info
+            display: grid
+            grid-template-rows: 0fr
+            transition: grid-template-rows 0.3s
+            div.info_overflow
+                overflow: hidden
+            div.info_wrap
+                display: grid
+                grid-template-columns: 1fr max-content
+                padding-top: 10px
+
+        span
+            color: #767676
+
+    &:hover
+        div.preview
+            img
+                transform: scale(1.2)
+        div.text
+            div.additional_info
+                grid-template-rows: 1fr
+
+a.service
+    position: relative
+    display: grid
+    align-content: space-between
+    counter-increment: services
+    border-radius: 5px
+    padding: 30px
+    background: white
+    overflow: hidden
+    +s(xl)
+        padding: 20px
+
+    & > *
+        z-index: 2
+        transition: color 0.5s
+
+    &::before
+        content: '[ 0' counter(services) ' ]'
+        width: max-content
+        background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+        background-clip: text
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        z-index: 2
+
+    &::after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+        z-index: 1
+        opacity: 0
+        transition: all 0.5s
+
+    span
+        color: #767676
+        transition: color 0.5s
+
+    &:hover
+        color: white
+        span
+            color: white
+        &::before
+            background: linear-gradient(128deg, #ffff 0%, #ffff 100%)
+            background-clip: text
+        &::after
+            opacity: 1
+
+span.subtitle
+    width: max-content
+    background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    margin-bottom: 10px
+    +s(m)
+        margin-bottom: 6px
+
+div.swiper-arrows
+    display: grid
+    grid-auto-flow: column
+    grid-auto-columns: max-content
+    grid-gap: 10px
+
+    div.prev, div.next
+        position: relative
+        cursor: pointer
+        display: grid
+        align-items: center
+        justify-items: center
+        background: white
+        user-select: none
+        border-radius: 3px
+        width: 50px
+        height: 50px
+        overflow: hidden
+
+        &.swiper-button-disabled
+            pointer-events: none
+            &::after
+                background: white
+            svg
+                path
+                    stroke: #7F178D
+
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            display: block
+            width: 50px
+            height: 50px
+            background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%)
+            transition: width 0.5s
+            z-index: 1
+
+        svg
+            z-index: 2
+            path
+                stroke: white
+
+        &:hover
+            &::after
+                width: 150px
+
+    div.next
+        transform: rotate(180deg)
+
+img.hand_swiper
+    animation-name: hand_swiper
+    animation-delay: 0s
+    animation-duration: 1.5s
+    animation-fill-mode: forwards
+    animation-iteration-count: infinite
 
 button.gray_arrow
     cursor: pointer
@@ -293,37 +566,78 @@ button.gray_arrow
     padding: 5px
     padding-left: unset
     background: #e5e3e5
-    color: #2d252f
+    transition: all 0.3s
     +s(l)
         height: 50px
 
     span
         display: block
-        padding-left: 54px
-        padding-right: 54px
+        padding-left: 32px
+        padding-right: 32px
+        text-align: center
         +s(l)
-            padding-left: 40px
-            padding-right: 40px
+            padding-left: 22px
+            padding-right: 22px
 
     div.arrow
+        position: relative
         display: grid
         align-items: center
         justify-items: center
         border-radius: 3px
         width: 50px
         height: 50px
-        background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%)
         transition: background 0.3s
+        overflow: hidden
         +s(l)
             width: 40px
             height: 40px
 
-        svg
-            transform: rotate(180deg)
-            path
-                stroke: white
+        div.icon
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            z-index: 1
+            width: 12px
+            height: 12px
+            img
+                transition: all 0.5s
+            img:first-child
+                margin-left: -11px
+                margin-right: 3px
+                opacity: 0
+
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            display: block
+            width: 50px
+            height: 50px
+            background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%)
+            transition: width 0.5s
+            +s(l)
+                width: 40px
+                height: 40px
 
     &:hover
         background: white
         div.arrow
-            background: linear-gradient(109deg, #7f178d 0%, #ef8218 150%, #dcde38 300%)
+            div.icon
+                img:first-child
+                    opacity: 1
+                    margin-left: 0px
+                    margin-right: 0px
+                img:last-child
+                    opacity: 0
+            &::after
+                width: 150px
+
+@keyframes hand_swiper
+    0%
+        transform: rotate(-90deg)
+    85%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(-90deg)

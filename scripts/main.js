@@ -2,8 +2,8 @@ new Swiper('section.certificates div.swiper', {
     slidesPerView: 4,
     spaceBetween: 50,
     navigation: {
-        prevEl: 'section.certificates div.swiper-navigation div.arrows div.prev',
-        nextEl: 'section.certificates div.swiper-navigation div.arrows div.next',
+        prevEl: 'section.certificates div.swiper-navigation div.swiper-arrows div.prev',
+        nextEl: 'section.certificates div.swiper-navigation div.swiper-arrows div.next',
     },
     breakpoints: {
         320: {
@@ -29,8 +29,8 @@ new Swiper('section.services div.swiper', {
     slidesPerView: 4,
     spaceBetween: 50,
     navigation: {
-        prevEl: 'section.services div.swiper-navigation div.arrows div.prev',
-        nextEl: 'section.services div.swiper-navigation div.arrows div.next',
+        prevEl: 'section.services div.swiper-navigation div.swiper-arrows div.prev',
+        nextEl: 'section.services div.swiper-navigation div.swiper-arrows div.next',
     },
     breakpoints: {
         320: {
@@ -96,7 +96,7 @@ window.onload = () => {
         }
     })
 
-    projects = document.querySelector('section.projects')
+    projects = document.querySelector('section.projects.rollup')
     gsap.fromTo(projects, {
         y: '200',
         opacity: 0
@@ -129,5 +129,21 @@ window.onload = () => {
         .fromTo('section.infographic h2', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, "-=0.7")
         .fromTo('section.infographic span.text', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1 }, "-=0.7")
         .fromTo('section.infographic img', { opacity: 0, y: 50 }, { opacity: 1, y: 0 })
+
+
+    brands = document.querySelector('section.brands div.container')
+    gsap.fromTo(brands, {
+        x: 0
+    }, {
+        x: '-=800',
+        scrollTrigger: {
+            trigger: main,
+            start: 'center center',
+            end: 'bottom center',
+            scrub: true,
+            // pin: true,
+            // markers: true
+        }
+    })
 
 }

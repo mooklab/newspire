@@ -1,51 +1,20 @@
+include ../common/pug/_mixins.pug
+
 mixin projects(type)
-    section.projects
+    section.projects.rollup
         div.container
 
             div.title
                 span.subtitle= type
-                h2 Реализованно более #[span 2 000 проектов]
+                h2 Реализованно более #[span 2 000 проектов]
 
             div.list
-                a(href="project.html").project
-                    div.preview
-                        img(src="images/3.webp", alt="ГК «ЭФКО»")
-                        div.tags
-                            span Международные проекты
-                            span Остров
-                            span 2025
-                    div.text
-                        h5 ГК «ЭФКО»
-                        span 15м2
-                a(href="project.html").project
-                    div.preview
-                        img(src="images/4.webp", alt="ГК «ЭФКО»")
-                        div.tags
-                            span Остров
-                            span 2025
-                    div.text
-                        h5 ГК «ЭФКО»
-                        span 15м2
-                a(href="project.html").project
-                    div.preview
-                        img(src="images/6.webp", alt="ГК «ЭФКО»")
-                        div.tags
-                            span Остров
-                            span 2025
-                    div.text
-                        h5 ГК «ЭФКО»
-                        span 15м2
-                a(href="project.html").project
-                    div.preview
-                        img(src="images/7.webp", alt="ГК «ЭФКО»")
-                        div.tags
-                            span Остров
-                            span 2025
-                    div.text
-                        h5 ГК «ЭФКО»
-                        span 15м2
+                +project('ГК «ЭФКО»', 'images/3.webp')
+                +project('ГК «ЭФКО»', 'images/4.webp')
+                +project('ГК «ЭФКО»', 'images/5.webp')
+                +project('ГК «ЭФКО»', 'images/6.webp')
 
-            a(href="index.html").more
+            a(href="projects.html").link
                 span Все проекты
                 img(src="images/watch_project.svg", alt="")
 

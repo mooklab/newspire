@@ -63,6 +63,8 @@ header
         display: grid
         grid-auto-flow: column
         grid-auto-columns: max-content
+        justify-items: center
+        align-items: center
         grid-gap: 50px
         +s(xl)
             grid-gap: 40px
@@ -72,12 +74,34 @@ header
             display: none
 
         a
+            display: grid
+            align-items: center
+            grid-template-columns: repeat(2, max-content)
+            grid-gap: 0px
             font-weight: 400
             font-size: 18px
-            line-height: 140%
+            line-height: 100%
             color: #767676
+            transition: all 0.3s
             +s(l)
                 font-size: 16px
+
+            &::before
+                content: ''
+                display: block
+                width: 8px
+                height: 8px
+                border-radius: 3px
+                background: linear-gradient(128deg, #7f178d 0%, #ef8218 69.2%, #dcde38 100%)
+                opacity: 0
+                transition: all 0.3s
+
+            &:hover
+                grid-gap: 8px
+                margin-right: -4px
+                margin-left: -4px
+                &::before
+                    opacity: 1
 
     div.contacts
         display: grid
@@ -92,7 +116,7 @@ header
             font-weight: 500
             font-size: 22px
             line-height: 130%
-            color: #767676
+            color: #2d252f
             +s(xl)
                 font-size: 20px
                 line-height: 120%

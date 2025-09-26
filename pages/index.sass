@@ -10,19 +10,11 @@ header
     left: 0
     width: 100%
     z-index: 2
+    background: white
 
 section.intro
-    // height: 891px
     height: 100vh
     overflow: hidden
-    // +s(xl)
-    //     height: 720px
-    // +s(l)
-    //     height: 614px
-    // +s(xl)
-    //     height: 696px
-    // +s(xl)
-    //     height: 630px
 
     div.container
         position: relative
@@ -35,6 +27,7 @@ section.intro
             padding-top: 75px
 
         div.subtitle
+            margin-top: -5px
             background: #F5F5F7
             padding-top: 100px
             padding-bottom: 36px
@@ -91,7 +84,7 @@ section.intro
                 padding-top: 30px
                 padding-bottom: 30px
 
-            span
+            span.text
                 display: block
                 color: #767676
                 max-width: 392px
@@ -100,7 +93,7 @@ section.intro
             content: ''
             position: absolute
             top: 0
-            right: 100%
+            right: calc(100% - 1px)
             display: block
             height: 100%
             width: calc((100vw - 100%) / 2)
@@ -109,7 +102,7 @@ section.intro
             content: ''
             position: absolute
             top: 0
-            left: 100%
+            left: calc(100% - 1px)
             display: block
             height: 100%
             width: calc((100vw - 100%) / 2)
@@ -124,8 +117,22 @@ section.intro
         height: 100%
         object-fit: cover
 
-header
-    background: white
+section.brands
+    padding-top: 40px
+    overflow: hidden
+    div.container
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        // justify-content: center
+        align-items: center
+        grid-gap: 78px
+        +s(xl)
+            grid-gap: 94px
+        +s(m)
+            grid-gap: 50px
+        +s(s)
+            grid-gap: 30px
 
 section.services
     margin-top: 100px
@@ -136,16 +143,6 @@ section.services
     +s(m)
         margin-top: 70px
         margin-bottom: 70px
-
-    span.subtitle
-        display: block
-        background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
-        background-clip: text
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-        margin-bottom: 10px
-        +s(m)
-            margin-bottom: 6px
 
     div.title
         display: grid
@@ -167,65 +164,16 @@ section.services
             +s(m)
                 grid-template-columns: 1fr max-content
 
-            div.arrows
-                display: grid
-                grid-auto-flow: column
-                grid-auto-columns: max-content
-                grid-gap: 10px
-                div.prev, div.next
-                    cursor: pointer
-                    display: grid
-                    align-items: center
-                    justify-items: center
-                    background: white
-                    user-select: none
-                    border-radius: 3px
-                    width: 50px
-                    height: 50px
-                    &:hover
-                        background: linear-gradient(133deg, #7f178d 0%, #ef8218 78.55%, #dcde38 100%)
-                        svg
-                            path
-                                stroke: white
-                div.next
-                    transform: rotate(180deg)
-
     div.swiper
         counter-reset: services
 
     a.service
-        display: grid
-        align-content: space-between
-        counter-increment: services
-        border-radius: 5px
         height: 572px
-        padding: 30px
-        background: white
         +s(xl)
             height: 474px
-            padding: 20px
         +s(l)
             height: 378px
         +s(m)
             height: 436px
         +s(s)
             height: 388px
-
-        &::before
-            content: '[ 0' counter(services) ' ]'
-            background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%)
-            background-clip: text
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
-
-        span
-            color: #767676
-
-        &:hover
-            background: linear-gradient(42deg, #7f178d 0%, #ef8218 150%, #dcde38 200%)
-            color: white
-            span
-                color: white
-            &:before
-                background: linear-gradient(128deg, #ffff 0%, #ffff 100%)
-                background-clip: text

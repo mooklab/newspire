@@ -18,13 +18,38 @@ block content
                 div.mobile
                     include ../images/main_text_mobile.svg
             div.text
-                span Стенд, как произведение искусства. Мы не просто строим, а воплощаем ваш бренд в пространстве, где каждая деталь работает на вас
+                span.text Стенд, как произведение искусства. Мы не просто строим, а воплощаем ваш бренд в пространстве, где каждая деталь работает на вас
                 button(data-modal-target="callback").gray_arrow
                     span Оставить заявку
                     div.arrow
-                        include ../images/main_arrow.svg
+                        div.icon
+                            img(src="images/single_arrow.svg")
+                            img(src="images/single_arrow.svg")
+                            img(src="images/single_arrow.svg")
 
         img(src="images/6.webp").background
+
+    section.brands
+        div.container
+            img(src="images/brands/1.webp", alt="")
+            img(src="images/brands/2.webp", alt="")
+            img(src="images/brands/3.webp", alt="")
+            img(src="images/brands/4.webp", alt="")
+            img(src="images/brands/5.webp", alt="")
+            img(src="images/brands/6.webp", alt="")
+            img(src="images/brands/7.webp", alt="")
+            img(src="images/brands/8.webp", alt="")
+            img(src="images/brands/9.webp", alt="")
+            img(src="images/brands/10.webp", alt="")
+            img(src="images/brands/11.webp", alt="")
+            img(src="images/brands/12.webp", alt="")
+            img(src="images/brands/13.webp", alt="")
+            img(src="images/brands/14.webp", alt="")
+            img(src="images/brands/15.webp", alt="")
+            img(src="images/brands/16.webp", alt="")
+            img(src="images/brands/17.webp", alt="")
+            img(src="images/brands/18.webp", alt="")
+            img(src="images/brands/19.webp", alt="")
 
     +projects('[ Портфолио ]')
 
@@ -35,8 +60,8 @@ block content
             div.title
                 h2 Проектируем #[span впечатления], строим #[span смыслы]
                 div.swiper-navigation
-                    img(src="images/hand_swipe.svg")
-                    div.arrows
+                    img(src="images/hand_swipe.svg").hand_swiper
+                    div.swiper-arrows
                         div.prev
                             include ../images/main_arrow.svg
                         div.next

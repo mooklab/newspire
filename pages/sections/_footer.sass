@@ -9,7 +9,7 @@ footer
         align-items: start
         grid-template-areas: 'Logotype Menu Contacts Callback'
         grid-template-columns: 2fr 2fr 4fr 4fr
-        grid-gap: 50px
+        grid-gap: var(--layout-gap)
         +s(l)
             padding-top: 60px
             padding-bottom: 60px
@@ -19,7 +19,7 @@ footer
         +s(1200px)
             grid-template-areas: 'Logotype Menu Contacts .' 'Logotype Note Socials Button'
             grid-template-columns: repeat(4, 1fr)
-            grid-gap: 40px 20px
+            grid-gap: 32px 20px
         +s(s)
             grid-template-areas: 'Logotype' 'Contacts' 'Callback' 'Menu'
             grid-template-columns: 1fr
@@ -42,7 +42,8 @@ footer
             display: grid
             grid-gap: 20px
             +s(s)
-                grid-template-columns: repeat(3, 1fr)
+                grid-template-columns: repeat(3, max-content)
+                justify-content: space-between
                 grid-gap: 10px
             a
                 opacity: 0.5
@@ -91,6 +92,7 @@ footer
             display: grid
             align-content: start
             justify-items: end
+            justify-self: end
             grid-template-areas: 'Note Note' 'Socials Button'
             grid-template-columns: max-content max-content
             grid-gap: 30px 10px
@@ -144,60 +146,11 @@ footer
                                 display: block
 
             button
-                grid-area: Button
-                cursor: pointer
-                display: grid
-                justify-self: start
-                align-items: center
-                grid-template-columns: 1fr max-content
-                border-radius: 5px
-                height: 60px
-                padding: 5px
-                padding-left: unset
-                background: transparent
-                border: 1px solid #423645
-                +s(l)
-                    height: 50px
-                +s(m)
-                    margin-left: -15px
-                    width: calc(100% + 15px)
-                +s(s)
-                    margin-left: unset
-                    width: unset
-
-                span
-                    display: block
-                    padding-left: 32px
-                    padding-right: 32px
-                    +s(xl)
-                        padding-left: 25px
-                        padding-right: 25px
-                    +s(l)
-                        padding-left: 15px
-                        padding-right: 15px
-
-                div.arrow
-                    display: grid
-                    align-items: center
-                    justify-items: center
-                    border-radius: 3px
-                    width: 50px
-                    height: 50px
-                    background: linear-gradient(133deg, #7f178d 0%, #ef8218 78.55%, #dcde38 100%)
-                    transition: background 0.3s
-                    +s(l)
-                        width: 40px
-                        height: 40px
-
-                    svg
-                        transform: rotate(180deg)
-                        path
-                            stroke: white
+                background: unset
+                outline: 1px solid #423645
 
                 &:hover
-                    border: 1px solid #878787
-                    div.arrow
-                        background: linear-gradient(109deg, #7f178d 0%, #ef8218 100%)
+                    outline: 1px solid #878787
 
     div.bottom
         display: grid
@@ -215,6 +168,7 @@ footer
 
         span, a
             opacity: 0.5
+            font-size: 14px
             +s(m)
                 font-size: 12px
 

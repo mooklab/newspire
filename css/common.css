@@ -122,25 +122,30 @@ img {
   --content: min(var(--content-width), 100% - var(--gap) * 2);
   --breakout: minmax(0, 100px);
   --content-width: 1720px;
+  --layout-gap: 50px;
 }
 @media (max-width: 1620px) {
   :root {
     --gap: 90px;
+    --layout-gap: 40px;
   }
 }
 @media (max-width: 1400px) {
   :root {
     --gap: 80px;
+    --layout-gap: 30px;
   }
 }
 @media (max-width: 960px) {
   :root {
     --gap: 20px;
+    --layout-gap: 20px;
   }
 }
 @media (max-width: 640px) {
   :root {
     --gap: 15px;
+    --layout-gap: 15px;
   }
 }
 
@@ -599,6 +604,7 @@ div.controls div.pagination {
   grid-gap: 5px;
 }
 div.controls div.pagination a, div.controls div.pagination span {
+  position: relative;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -611,32 +617,399 @@ div.controls div.pagination a, div.controls div.pagination span {
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
+  z-index: 1;
+  overflow: hidden;
 }
 @media (max-width: 640px) {
   div.controls div.pagination a, div.controls div.pagination span {
     font-size: 13px;
   }
 }
+div.controls div.pagination a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%);
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
+  z-index: -1;
+}
 div.controls div.pagination span {
   background: transparent;
+  pointer-events: none;
 }
 div.controls div.pagination a.active {
-  background: linear-gradient(125deg, #7f178d 0%, #ef8218 71.63%, #dcde38 98.56%);
   color: white;
+}
+div.controls div.pagination a.active::before {
+  width: 300%;
+  opacity: 1;
 }
 div.controls div.pagination a:hover {
-  background: linear-gradient(125deg, #7f178d 0%, #ef8218 150%, #dcde38 200%);
   color: white;
 }
+div.controls div.pagination a:hover::before {
+  opacity: 1;
+}
 div.controls a.more {
+  position: relative;
   border-radius: 3px;
   padding: 18px 30px;
   height: 55px;
-  background: linear-gradient(125deg, #7f178d 0%, #ef8218 71.63%, #dcde38 98.56%);
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+div.controls a.more::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%);
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  z-index: -1;
+}
+div.controls a.more:hover::before {
+  width: 300%;
+}
+
+a.link {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+}
+@media (max-width: 1400px) {
+  a.link {
+    font-size: 16px;
+  }
+}
+a.link:hover span {
+  background: linear-gradient(128deg, #7f178d 0%, #ef8218 50%, #dcde38 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+a.link img {
+  margin-left: 3px;
+}
+
+a.project {
+  display: grid;
+  grid-template-rows: 1fr -webkit-max-content;
+  grid-template-rows: 1fr max-content;
+  border-radius: 5px;
+  overflow: hidden;
+  background: white;
+  height: 588px;
+}
+@media (max-width: 1620px) {
+  a.project {
+    height: 483px;
+  }
+}
+@media (max-width: 1400px) {
+  a.project {
+    height: 411px;
+  }
+}
+@media (max-width: 960px) {
+  a.project {
+    height: 263px;
+  }
+}
+@media (max-width: 640px) {
+  a.project {
+    height: 258px;
+  }
+}
+a.project div.preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+a.project div.preview img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a.project div.preview div.tags {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: calc(100% - 60px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 5px;
+}
+@media (max-width: 1620px) {
+  a.project div.preview div.tags {
+    top: 20px;
+    left: 20px;
+  }
+}
+@media (max-width: 960px) {
+  a.project div.preview div.tags {
+    top: 15px;
+    left: 15px;
+  }
+}
+@media (max-width: 640px) {
+  a.project div.preview div.tags {
+    top: 10px;
+  }
+}
+a.project div.preview div.tags span {
+  border-radius: 50px;
+  padding: 10px 15px;
+  height: 35px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 110%;
+  text-align: center;
   color: white;
 }
-div.controls a.more:hover {
-  background: linear-gradient(125deg, #7f178d 0%, #ef8218 150%, #dcde38 200%);
+@media (max-width: 960px) {
+  a.project div.preview div.tags span {
+    font-size: 12px;
+  }
+}
+a.project div.text {
+  padding: 30px;
+}
+@media (max-width: 1620px) {
+  a.project div.text {
+    padding: 20px;
+  }
+}
+@media (max-width: 1400px) {
+  a.project div.text {
+    padding: 16px 20px;
+  }
+}
+@media (max-width: 960px) {
+  a.project div.text {
+    padding: 15px;
+  }
+}
+a.project div.text div.main_info {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+}
+a.project div.text div.additional_info {
+  display: grid;
+  grid-template-rows: 0fr;
+  -webkit-transition: grid-template-rows 0.3s;
+  transition: grid-template-rows 0.3s;
+  transition: grid-template-rows 0.3s, -ms-grid-rows 0.3s;
+}
+a.project div.text div.additional_info div.info_overflow {
+  overflow: hidden;
+}
+a.project div.text div.additional_info div.info_wrap {
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  padding-top: 10px;
+}
+a.project div.text span {
+  color: #767676;
+}
+a.project:hover div.preview img {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+a.project:hover div.text div.additional_info {
+  grid-template-rows: 1fr;
+}
+
+a.service {
+  position: relative;
+  display: grid;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  counter-increment: services;
+  border-radius: 5px;
+  padding: 30px;
+  background: white;
+  overflow: hidden;
+}
+@media (max-width: 1620px) {
+  a.service {
+    padding: 20px;
+  }
+}
+a.service > * {
+  z-index: 2;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+a.service::before {
+  content: "[ 0" counter(services) " ]";
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 2;
+}
+a.service::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%);
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+a.service span {
+  color: #767676;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+a.service:hover {
+  color: white;
+}
+a.service:hover span {
+  color: white;
+}
+a.service:hover::before {
+  background: linear-gradient(128deg, white 0%, white 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+a.service:hover::after {
+  opacity: 1;
+}
+
+span.subtitle {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  background: linear-gradient(128deg, #7f178d 0%, #ef8218 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+@media (max-width: 960px) {
+  span.subtitle {
+    margin-bottom: 6px;
+  }
+}
+
+div.swiper-arrows {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  grid-gap: 10px;
+}
+div.swiper-arrows div.prev, div.swiper-arrows div.next {
+  position: relative;
+  cursor: pointer;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  background: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 3px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+div.swiper-arrows div.prev.swiper-button-disabled, div.swiper-arrows div.next.swiper-button-disabled {
+  pointer-events: none;
+}
+div.swiper-arrows div.prev.swiper-button-disabled::after, div.swiper-arrows div.next.swiper-button-disabled::after {
+  background: white;
+}
+div.swiper-arrows div.prev.swiper-button-disabled svg path, div.swiper-arrows div.next.swiper-button-disabled svg path {
+  stroke: #7F178D;
+}
+div.swiper-arrows div.prev::after, div.swiper-arrows div.next::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%);
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+  z-index: 1;
+}
+div.swiper-arrows div.prev svg, div.swiper-arrows div.next svg {
+  z-index: 2;
+}
+div.swiper-arrows div.prev svg path, div.swiper-arrows div.next svg path {
+  stroke: white;
+}
+div.swiper-arrows div.prev:hover::after, div.swiper-arrows div.next:hover::after {
+  width: 150px;
+}
+div.swiper-arrows div.next {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+img.hand_swiper {
+  -webkit-animation-name: hand_swiper;
+          animation-name: hand_swiper;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 button.gray_arrow {
@@ -653,7 +1026,8 @@ button.gray_arrow {
   padding: 5px;
   padding-left: unset;
   background: #e5e3e5;
-  color: #2d252f;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (max-width: 1400px) {
   button.gray_arrow {
@@ -662,16 +1036,18 @@ button.gray_arrow {
 }
 button.gray_arrow span {
   display: block;
-  padding-left: 54px;
-  padding-right: 54px;
+  padding-left: 32px;
+  padding-right: 32px;
+  text-align: center;
 }
 @media (max-width: 1400px) {
   button.gray_arrow span {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
 }
 button.gray_arrow div.arrow {
+  position: relative;
   display: grid;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -680,9 +1056,9 @@ button.gray_arrow div.arrow {
   border-radius: 3px;
   width: 50px;
   height: 50px;
-  background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%);
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
+  overflow: hidden;
 }
 @media (max-width: 1400px) {
   button.gray_arrow div.arrow {
@@ -690,21 +1066,86 @@ button.gray_arrow div.arrow {
     height: 40px;
   }
 }
-button.gray_arrow div.arrow svg {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+button.gray_arrow div.arrow div.icon {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
 }
-button.gray_arrow div.arrow svg path {
-  stroke: white;
+button.gray_arrow div.arrow div.icon img {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+button.gray_arrow div.arrow div.icon img:first-child {
+  margin-left: -11px;
+  margin-right: 3px;
+  opacity: 0;
+}
+button.gray_arrow div.arrow::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(133deg, #7f178d 0%, #ef8218 75%, #dcde38 100%);
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+@media (max-width: 1400px) {
+  button.gray_arrow div.arrow::after {
+    width: 40px;
+    height: 40px;
+  }
 }
 button.gray_arrow:hover {
   background: white;
 }
-button.gray_arrow:hover div.arrow {
-  background: linear-gradient(109deg, #7f178d 0%, #ef8218 150%, #dcde38 300%);
+button.gray_arrow:hover div.arrow div.icon img:first-child {
+  opacity: 1;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+button.gray_arrow:hover div.arrow div.icon img:last-child {
+  opacity: 0;
+}
+button.gray_arrow:hover div.arrow::after {
+  width: 150px;
 }
 
+@-webkit-keyframes hand_swiper {
+  0% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  85% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@keyframes hand_swiper {
+  0% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+  85% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
 html:has(dialog[open]) {
   overflow-y: hidden;
   margin-right: var(--scrollbar-width);
@@ -866,6 +1307,8 @@ dialog[data-modal-name=article] img.preview {
 dialog[data-modal-name=article] div.text {
   max-width: 688px;
   padding: 60px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 @media (max-width: 1620px) {
   dialog[data-modal-name=article] div.text {
@@ -897,6 +1340,9 @@ dialog[data-modal-name=article] div.text span.date {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 dialog[data-modal-name=article] div.text span.date:before {
   content: "";
@@ -1108,12 +1554,157 @@ dialog[data-modal-name=callback] div.form label.checkbox span {
 }
 dialog[data-modal-name=callback] div.form label.checkbox a {
   color: #2d252f;
+  text-decoration: underline;
+}
+dialog[data-modal-name=callback] div.form label.checkbox a:hover {
+  text-decoration: none;
 }
 dialog[data-modal-name=callback] div.form button.gray_arrow {
   background: #f7f7f7;
 }
 dialog[data-modal-name=callback] div.form button.gray_arrow:hover {
   background: white;
+}
+
+dialog[data-modal-name=menu] {
+  display: grid;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  height: 100%;
+  width: calc(100% - 15px);
+  margin-left: 15px;
+  max-height: unset;
+  max-width: unset;
+  background: transparent;
+}
+dialog[data-modal-name=menu] div.container {
+  display: grid;
+  width: 100%;
+  max-width: 394px;
+  height: 100%;
+  background: white;
+  padding: 70px;
+  padding-top: 100px;
+}
+@media (max-width: 1620px) {
+  dialog[data-modal-name=menu] div.container {
+    width: 658px;
+  }
+}
+@media (max-width: 1400px) {
+  dialog[data-modal-name=menu] div.container {
+    width: 668px;
+  }
+}
+@media (max-width: 960px) {
+  dialog[data-modal-name=menu] div.container {
+    width: 531px;
+  }
+}
+@media (max-width: 640px) {
+  dialog[data-modal-name=menu] div.container {
+    width: 360px;
+  }
+}
+dialog[data-modal-name=menu] div.cross {
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 12px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+dialog[data-modal-name=menu] div.cross img {
+  width: 42px;
+  height: 42px;
+}
+dialog[data-modal-name=menu] div.content {
+  display: grid;
+  grid-template-rows: 1fr -webkit-max-content;
+  grid-template-rows: 1fr max-content;
+  grid-gap: 40px;
+}
+dialog[data-modal-name=menu] menu {
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-gap: 40px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: #767676;
+}
+dialog[data-modal-name=menu] div.contacts {
+  display: grid;
+  grid-gap: 30px;
+}
+dialog[data-modal-name=menu] div.phone,
+dialog[data-modal-name=menu] div.email {
+  position: relative;
+  display: grid;
+  grid-gap: 5px;
+}
+@media (max-width: 960px) {
+  dialog[data-modal-name=menu] div.phone,
+  dialog[data-modal-name=menu] div.email {
+    grid-gap: 5px;
+  }
+}
+dialog[data-modal-name=menu] div.phone > a, dialog[data-modal-name=menu] div.phone span,
+dialog[data-modal-name=menu] div.email > a,
+dialog[data-modal-name=menu] div.email span {
+  color: rgba(17, 14, 17, 0.4);
+}
+dialog[data-modal-name=menu] div.phone h4 > a:hover,
+dialog[data-modal-name=menu] div.email h4 > a:hover {
+  background: linear-gradient(147deg, #7f178d 0%, #ef8218 75.96%, #dcde38 98.56%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+dialog[data-modal-name=menu] div.messengers {
+  display: grid;
+  grid-gap: 6px;
+}
+dialog[data-modal-name=menu] div.messengers div.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+dialog[data-modal-name=menu] div.messengers div.list a.item {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border-radius: 999px;
+  width: 60px;
+  height: 60px;
+  background: #f5f5f7;
+}
+@media (max-width: 1400px) {
+  dialog[data-modal-name=menu] div.messengers div.list a.item {
+    width: 50px;
+    height: 50px;
+  }
+}
+dialog[data-modal-name=menu] div.messengers div.list a.item:hover {
+  background: #e6e6e6;
+}
+dialog[data-modal-name=menu] div.messengers div.list img {
+  width: 20px;
+  height: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+dialog[data-modal-name=menu] div.messengers span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  color: rgba(45, 37, 47, 0.5);
 }
 
 footer {
@@ -1129,7 +1720,7 @@ footer div.top {
           align-items: start;
   grid-template-areas: "Logotype Menu Contacts Callback";
   grid-template-columns: 2fr 2fr 4fr 4fr;
-  grid-gap: 50px;
+  grid-gap: var(--layout-gap);
 }
 @media (max-width: 1400px) {
   footer div.top {
@@ -1147,7 +1738,7 @@ footer div.top {
   footer div.top {
     grid-template-areas: "Logotype Menu Contacts ." "Logotype Note Socials Button";
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 40px 20px;
+    grid-gap: 32px 20px;
   }
 }
 @media (max-width: 640px) {
@@ -1186,7 +1777,11 @@ footer div.top menu {
 }
 @media (max-width: 640px) {
   footer div.top menu {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, -webkit-max-content);
+    grid-template-columns: repeat(3, max-content);
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     grid-gap: 10px;
   }
 }
@@ -1253,6 +1848,7 @@ footer div.top div.callback {
   -ms-flex-line-pack: start;
       align-content: start;
   justify-items: end;
+  justify-self: end;
   grid-template-areas: "Note Note" "Socials Button";
   grid-template-columns: -webkit-max-content -webkit-max-content;
   grid-template-columns: max-content max-content;
@@ -1327,88 +1923,11 @@ footer div.top div.callback div.socials a:hover img:last-child {
   display: block;
 }
 footer div.top div.callback button {
-  grid-area: Button;
-  cursor: pointer;
-  display: grid;
-  justify-self: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  grid-template-columns: 1fr -webkit-max-content;
-  grid-template-columns: 1fr max-content;
-  border-radius: 5px;
-  height: 60px;
-  padding: 5px;
-  padding-left: unset;
-  background: transparent;
-  border: 1px solid #423645;
-}
-@media (max-width: 1400px) {
-  footer div.top div.callback button {
-    height: 50px;
-  }
-}
-@media (max-width: 960px) {
-  footer div.top div.callback button {
-    margin-left: -15px;
-    width: calc(100% + 15px);
-  }
-}
-@media (max-width: 640px) {
-  footer div.top div.callback button {
-    margin-left: unset;
-    width: unset;
-  }
-}
-footer div.top div.callback button span {
-  display: block;
-  padding-left: 32px;
-  padding-right: 32px;
-}
-@media (max-width: 1620px) {
-  footer div.top div.callback button span {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-}
-@media (max-width: 1400px) {
-  footer div.top div.callback button span {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-footer div.top div.callback button div.arrow {
-  display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  justify-items: center;
-  border-radius: 3px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(133deg, #7f178d 0%, #ef8218 78.55%, #dcde38 100%);
-  -webkit-transition: background 0.3s;
-  transition: background 0.3s;
-}
-@media (max-width: 1400px) {
-  footer div.top div.callback button div.arrow {
-    width: 40px;
-    height: 40px;
-  }
-}
-footer div.top div.callback button div.arrow svg {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-footer div.top div.callback button div.arrow svg path {
-  stroke: white;
+  background: unset;
+  outline: 1px solid #423645;
 }
 footer div.top div.callback button:hover {
-  border: 1px solid #878787;
-}
-footer div.top div.callback button:hover div.arrow {
-  background: linear-gradient(109deg, #7f178d 0%, #ef8218 100%);
+  outline: 1px solid #878787;
 }
 footer div.bottom {
   display: grid;
@@ -1434,6 +1953,7 @@ footer div.bottom {
 }
 footer div.bottom span, footer div.bottom a {
   opacity: 0.5;
+  font-size: 14px;
 }
 @media (max-width: 960px) {
   footer div.bottom span, footer div.bottom a {
@@ -1554,6 +2074,10 @@ header menu {
   grid-auto-flow: column;
   grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   grid-gap: 50px;
 }
 @media (max-width: 1620px) {
@@ -1572,15 +2096,43 @@ header menu {
   }
 }
 header menu a {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-gap: 0px;
   font-weight: 400;
   font-size: 18px;
-  line-height: 140%;
+  line-height: 100%;
   color: #767676;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media (max-width: 1400px) {
   header menu a {
     font-size: 16px;
   }
+}
+header menu a::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background: linear-gradient(128deg, #7f178d 0%, #ef8218 69.2%, #dcde38 100%);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+header menu a:hover {
+  grid-gap: 8px;
+  margin-right: -4px;
+  margin-left: -4px;
+}
+header menu a:hover::before {
+  opacity: 1;
 }
 header div.contacts {
   display: grid;
@@ -1601,7 +2153,7 @@ header div.contacts a {
   font-weight: 500;
   font-size: 22px;
   line-height: 130%;
-  color: #767676;
+  color: #2d252f;
 }
 @media (max-width: 1620px) {
   header div.contacts a {
