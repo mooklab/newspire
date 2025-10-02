@@ -17,25 +17,27 @@ section.projects
         margin-top: 30px
 
     div.filter
-        display: flex
-        grid-auto-flow: column
-        grid-auto-columns: max-content
-        background: white
-        margin-bottom: 50px
-        scroll-snap-type: x mandatory
-        -webkit-overflow-scrolling: touch
-        width: 100vw
-        fieldset
-            flex: 0 0 auto
-            scroll-snap-align: start
-            // width: 80vw
+        pointer-events: none
+        padding-bottom: 300px
+        margin-bottom: -300px
+        overflow-x: scroll
+        div.scroll_wrap
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            background: white
+            margin-bottom: 50px
+            pointer-events: auto
+            &::-webkit-scrollbar
+                opacity: 0
+                display: none
 
-        +s(xl)
-            margin-bottom: 40px
-        +s(l)
-            margin-bottom: 30px
-        +s(m)
-            margin-bottom: 25px
+            +s(xl)
+                margin-bottom: 40px
+            +s(l)
+                margin-bottom: 30px
+            +s(m)
+                margin-bottom: 25px
 
     div.list
         display: grid
