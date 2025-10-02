@@ -1,0 +1,101 @@
+extends common/pug/_layout.pug
+include sections/_projects.pug
+include sections/_certificates.pug
+include sections/_subscribe.pug
+
+block links
+    link(rel="stylesheet", href="css/index2.css")
+
+block content
+
+    section.intro.main
+        div.container
+            div.subtitle
+                h2 Не просто стенд —
+            div.title
+                div.desktop
+                    include ../images/main_text.svg
+                div.mobile
+                    include ../images/main_text_mobile.svg
+            div.text
+                span.text Стенд, как произведение искусства. Мы не просто строим, а воплощаем ваш бренд в пространстве, где каждая деталь работает на вас
+                button(data-modal-target="callback").gray_arrow
+                    span Оставить заявку
+                    div.arrow
+                        div.icon
+                            img(src="images/single_arrow.svg")
+                            img(src="images/single_arrow.svg")
+                            img(src="images/single_arrow.svg")
+
+        video(src="images/video.mp4" autoplay loop muted ) 
+
+    section.brands
+        div.container
+            div.swiper
+                div.swiper-wrapper
+                    div.swiper-slide: img(src="images/brands/1.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/2.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/3.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/4.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/5.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/6.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/7.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/8.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/9.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/10.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/11.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/12.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/13.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/14.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/15.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/16.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/17.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/18.webp", alt="")
+                    div.swiper-slide: img(src="images/brands/19.webp", alt="")
+
+    +projects('[ Портфолио ]')
+
+    section.services
+        div.container
+            span.subtitle [ Услуги ]
+
+            div.title
+                h2 Проектируем #[span впечатления], строим #[span смыслы]
+                div.swiper-navigation
+                    img(src="images/hand_swipe.svg").hand_swiper
+                    div.swiper-arrows
+                        div.prev
+                            include ../images/main_arrow.svg
+                        div.next
+                            include ../images/main_arrow.svg
+
+
+            div.swiper
+                div.swiper-wrapper
+                        div.swiper-slide
+                            a(href="service.html").service
+                                h4 3D-дизайн #[br]и графика
+                                span Изучим ваш бизнес, позиционирование и цели. Создадим точную визуализацию, чтобы вы знали, как будет выглядеть ваш стенд в пространстве
+                        div.swiper-slide
+                            a(href="service.html").service
+                                h4 Проектирование #[br]и аккредитация
+                                span Подготовим все документы, учтём требования выставочного центра и позаботимся о безопасности конструкций. Никаких неожиданностей на монтаже
+                        div.swiper-slide
+                            a(href="service.html").service
+                                h4 Производство #[br]стендов
+                                span Создадим стенд, который выделит вас на выставке. У нас свое производство: современные станки и контроль качества. Воплощаем в жизнь даже сложные идеи
+                        div.swiper-slide
+                            a(href="service.html").service
+                                h4 Демонтаж #[br]и строительство
+                                span Надёжно и вовремя соберём ваш стенд на площадке и аккуратно разберём после выставки. По графику, без лишнего шума и задержек
+                        div.swiper-slide
+                            a(href="service.html").service
+                                h4 Аренда #[br]оборудования
+                                span Предоставим в аренду все, что нужно: мультимедиа, освещение, мебель. Никаких лишних забот — просто подключайтесь и работайте
+                        div.swiper-slide
+                            a(href="service.html").service
+                                h4 Сопутствующие #[br]услуги
+                                span Поможем с аккредитацией, кейтерингом, промо-персоналом и сувенирами. Полный комфорт для вас и вашей команды на выставке
+
+    +certificates('[ Благодарственные письма ]', 'Нам <span>доверяют</span>')
+    +subscribe('Готовы выделиться среди сотен безликих стендов?', 'Оставьте заявку и расскажите нам о вашем проекте. А мы создадим пространство, которое зазвучит: громко, ярко, по-настоящему')

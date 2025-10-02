@@ -1,0 +1,187 @@
+@import /pages/common/sass/_mixins
+
+@import sections/_projects
+@import sections/_certificates
+@import sections/_subscribe
+
+header
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    z-index: 2
+    background: white
+
+section.intro
+    height: 100vh
+    overflow: hidden
+
+    div.container
+        position: relative
+        height: max-content
+        padding-top: 100px
+        z-index: 1
+        +s(l)
+            padding-top: 89px
+        +s(m)
+            padding-top: 75px
+
+        div.subtitle
+            margin-top: -5px
+            background: #F5F5F7
+            padding-top: 100px
+            padding-bottom: 36px
+            +s(l)
+                padding-top: 60px
+                padding-bottom: 30px
+            +s(m)
+                padding-top: 100px
+                padding-bottom: 20px
+            +s(s)
+                padding-top: 80px
+                padding-bottom: 30px
+
+        div.title
+            display: grid
+            margin-top: -1px
+            margin-bottom: -1px
+
+            div
+                display: grid
+                line-height: 0
+
+            svg
+                width: 100%
+                height: auto
+
+            div.desktop
+                +s(m)
+                    display: none
+
+            div.mobile
+                display: none
+                +s(m)
+                    display: block
+
+        div.text
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 50px
+            background: #F5F5F7
+            padding-top: 50px
+            padding-bottom: 50px
+            +s(xl)
+                padding-top: 30px
+            +s(l)
+                padding-top: 30px
+                padding-bottom: 40px
+            +s(m)
+                padding-top: 20px
+            +s(s)
+                grid-auto-flow: row
+                grid-gap: 20px
+                padding-top: 30px
+                padding-bottom: 30px
+
+            span.text
+                display: block
+                color: #767676
+                max-width: 392px
+
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: calc(100% - 1px)
+            display: block
+            height: 100%
+            width: calc((100vw - 100%) / 2)
+            background: #F5F5F7
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: calc(100% - 1px)
+            display: block
+            height: 100%
+            width: calc((100vw - 100%) / 2)
+            background: #F5F5F7
+
+    video
+        grid-column: full
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+section.brands
+    padding-top: 40px
+    overflow: hidden
+    div.container
+        grid-column: full
+    div.swiper
+        overflow: visible
+    div.swiper-wrapper
+        transition-timing-function: linear !important
+    div.swiper-slide
+        width: max-content
+    // div.container
+    //     display: grid
+    //     grid-auto-flow: column
+    //     grid-auto-columns: max-content
+    //     // justify-content: center
+    //     align-items: center
+    //     grid-gap: 78px
+    //     +s(xl)
+    //         grid-gap: 94px
+    //     +s(m)
+    //         grid-gap: 50px
+    //     +s(s)
+    //         grid-gap: 30px
+
+section.services
+    margin-top: 100px
+    margin-bottom: 100px
+    +s(l)
+        margin-top: 80px
+        margin-bottom: 80px
+    +s(m)
+        margin-top: 70px
+        margin-bottom: 70px
+
+    div.title
+        display: grid
+        grid-template-columns: 1fr max-content
+        grid-gap: 10px
+        margin-bottom: 40px
+        +s(l)
+            margin-bottom: 25px
+        +s(m)
+            grid-template-columns: 1fr
+            grid-gap: 25px
+
+        div.swiper-navigation
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            align-items: center
+            grid-gap: 35px
+            +s(m)
+                grid-template-columns: 1fr max-content
+
+    div.swiper
+        counter-reset: services
+
+    a.service
+        height: 572px
+        +s(xl)
+            height: 474px
+        +s(l)
+            height: 378px
+        +s(m)
+            height: 436px
+        +s(s)
+            height: 388px
