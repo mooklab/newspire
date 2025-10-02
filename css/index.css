@@ -440,29 +440,19 @@ section.brands {
   overflow: hidden;
 }
 section.brands div.container {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: -webkit-max-content;
-  grid-auto-columns: max-content;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  grid-gap: 78px;
+  grid-column: full;
 }
-@media (max-width: 1620px) {
-  section.brands div.container {
-    grid-gap: 94px;
-  }
+section.brands div.swiper {
+  overflow: visible;
 }
-@media (max-width: 960px) {
-  section.brands div.container {
-    grid-gap: 50px;
-  }
+section.brands div.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
 }
-@media (max-width: 640px) {
-  section.brands div.container {
-    grid-gap: 30px;
-  }
+section.brands div.swiper-slide {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 section.services {

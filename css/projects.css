@@ -143,12 +143,24 @@ section.projects {
   }
 }
 section.projects div.filter {
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   grid-auto-flow: column;
   grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
   background: white;
   margin-bottom: 50px;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  width: 100vw;
+}
+section.projects div.filter fieldset {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  scroll-snap-align: start;
 }
 @media (max-width: 1620px) {
   section.projects div.filter {

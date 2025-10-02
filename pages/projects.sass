@@ -17,11 +17,19 @@ section.projects
         margin-top: 30px
 
     div.filter
-        display: grid
+        display: flex
         grid-auto-flow: column
         grid-auto-columns: max-content
         background: white
         margin-bottom: 50px
+        scroll-snap-type: x mandatory
+        -webkit-overflow-scrolling: touch
+        width: 100vw
+        fieldset
+            flex: 0 0 auto
+            scroll-snap-align: start
+            // width: 80vw
+
         +s(xl)
             margin-bottom: 40px
         +s(l)

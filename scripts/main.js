@@ -52,6 +52,27 @@ new Swiper('section.services div.swiper', {
     }
 })
 
+new Swiper('section.brands div.swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    loop: true,
+    speed: 1000,
+    autoplay: {
+        delay: 0,
+    },
+    breakpoints: {
+        640: {
+            spaceBetween: 50,
+        },
+        1280: {
+            spaceBetween: 98,
+        },
+        1600: {
+            spaceBetween: 78
+        }
+    }
+})
+
 forms = document.querySelectorAll('form')
 
 forms.forEach(form => {
@@ -83,7 +104,7 @@ window.onload = () => {
     main_container = document.querySelector('section.intro.main div.container')
     page_intro = document.querySelector('section.intro.inner')
     projects = document.querySelector('section.projects.rollup')
-    brands = document.querySelector('section.brands div.container')
+    // brands = document.querySelector('section.brands div.container')
     numbers = document.querySelectorAll('section.about div.digit span.digit')
 
     gsap.fromTo(main_container, {
@@ -117,19 +138,19 @@ window.onload = () => {
         }
     })
 
-    gsap.fromTo(brands, {
-        x: 0
-    }, {
-        x: '-=800',
-        scrollTrigger: {
-            trigger: main_intro,
-            start: 'center center',
-            end: 'bottom center',
-            scrub: true,
-            // pin: true,
-            // markers: true
-        }
-    })
+    // gsap.fromTo(brands, {
+    //     x: 0
+    // }, {
+    //     x: '-=800',
+    //     scrollTrigger: {
+    //         trigger: main_intro,
+    //         start: 'center center',
+    //         end: 'bottom center',
+    //         scrub: true,
+    //         // pin: true,
+    //         // markers: true
+    //     }
+    // })
 
     numbers.forEach(number => {
         const targetValue = parseInt(number.textContent)

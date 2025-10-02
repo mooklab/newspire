@@ -121,18 +121,26 @@ section.brands
     padding-top: 40px
     overflow: hidden
     div.container
-        display: grid
-        grid-auto-flow: column
-        grid-auto-columns: max-content
-        // justify-content: center
-        align-items: center
-        grid-gap: 78px
-        +s(xl)
-            grid-gap: 94px
-        +s(m)
-            grid-gap: 50px
-        +s(s)
-            grid-gap: 30px
+        grid-column: full
+    div.swiper
+        overflow: visible
+    div.swiper-wrapper
+        transition-timing-function: linear !important
+    div.swiper-slide
+        width: max-content
+    // div.container
+    //     display: grid
+    //     grid-auto-flow: column
+    //     grid-auto-columns: max-content
+    //     // justify-content: center
+    //     align-items: center
+    //     grid-gap: 78px
+    //     +s(xl)
+    //         grid-gap: 94px
+    //     +s(m)
+    //         grid-gap: 50px
+    //     +s(s)
+    //         grid-gap: 30px
 
 section.services
     margin-top: 100px

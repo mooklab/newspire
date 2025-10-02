@@ -705,8 +705,42 @@ a.link:hover span {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-a.link img {
-  margin-left: 3px;
+a.link div.arrow {
+  position: relative;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  margin-left: 12px;
+  margin-top: -2px;
+}
+a.link div.arrow div.icon {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+}
+a.link div.arrow div.icon img {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-left: -2px;
+}
+a.link div.arrow div.icon img:first-child {
+  margin-left: -11px;
+  margin-right: 3px;
+  opacity: 0;
+}
+a.link:hover div.arrow div.icon img:first-child {
+  opacity: 1;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+a.link:hover div.arrow div.icon img:last-child {
+  opacity: 0;
 }
 
 a.project {
@@ -847,9 +881,9 @@ a.project div.text span {
   color: #767676;
 }
 a.project:hover div.preview img {
-  -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 a.project:hover div.text div.additional_info {
   grid-template-rows: 1fr;

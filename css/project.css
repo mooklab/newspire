@@ -341,7 +341,9 @@ section.gallery div.navigation {
     margin-top: 25px;
   }
 }
-section.gallery a.prev img {
+section.gallery a.prev div.arrow {
+  margin-right: 12px;
+  margin-top: 2px;
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);

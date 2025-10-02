@@ -336,8 +336,40 @@ a.link
             -webkit-background-clip: text
             -webkit-text-fill-color: transparent
 
-    img
-        margin-left: 3px
+    // img
+    //     margin-left: 3px
+
+    div.arrow
+        position: relative
+        display: grid
+        align-items: center
+        justify-items: center
+        margin-left: 12px
+        margin-top: -2px
+        div.icon
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            z-index: 1
+            width: 12px
+            height: 12px
+            img
+                transition: all 0.5s
+                margin-left: -2px
+            img:first-child
+                margin-left: -11px
+                margin-right: 3px
+                opacity: 0
+
+    &:hover
+        div.arrow
+            div.icon
+                img:first-child
+                    opacity: 1
+                    margin-left: 0px
+                    margin-right: 0px
+                img:last-child
+                    opacity: 0
 
 a.project
     display: grid
@@ -430,7 +462,7 @@ a.project
     &:hover
         div.preview
             img
-                transform: scale(1.2)
+                transform: scale(1.05)
         div.text
             div.additional_info
                 grid-template-rows: 1fr
