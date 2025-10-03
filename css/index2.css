@@ -454,6 +454,9 @@ section.brands div.swiper-slide {
   width: -moz-max-content;
   width: max-content;
 }
+section.brands img {
+  height: 50px;
+}
 
 section.services {
   margin-top: 100px;

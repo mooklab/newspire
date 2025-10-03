@@ -434,6 +434,16 @@ section.intro img.background {
   -o-object-fit: cover;
      object-fit: cover;
 }
+section.intro video {
+  grid-column: full;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 section.brands {
   padding-top: 40px;
@@ -453,6 +463,19 @@ section.brands div.swiper-slide {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+section.brands img {
+  height: 50px;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  opacity: 0.3;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+section.brands img:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  opacity: 1;
 }
 
 section.services {
