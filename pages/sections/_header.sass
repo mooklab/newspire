@@ -1,5 +1,9 @@
 header
     height: 100px
+    position: sticky
+    top: -200px
+    z-index: 9
+    transition: all 0.5s
     +s(l)
         height: 89px
     +s(m)
@@ -146,3 +150,7 @@ header
         display: none
         +s(1200px)
             display: block
+
+    &.show
+        top: 0
+        background: white

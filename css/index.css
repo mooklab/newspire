@@ -285,11 +285,6 @@ section.subscribe div.form button.gray_arrow {
 }
 
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
   background: white;
 }
 
@@ -302,18 +297,7 @@ section.intro div.container {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  padding-top: 100px;
   z-index: 1;
-}
-@media (max-width: 1400px) {
-  section.intro div.container {
-    padding-top: 89px;
-  }
-}
-@media (max-width: 960px) {
-  section.intro div.container {
-    padding-top: 75px;
-  }
 }
 section.intro div.container div.subtitle {
   margin-top: -5px;

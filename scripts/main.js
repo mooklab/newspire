@@ -211,3 +211,14 @@ window.onload = () => {
             .fromTo('section.intro.inner + section', { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, 2)
     }
 }
+
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos && window.pageYOffset > 10) {
+        document.querySelector("header").classList.add('show')
+    } else {
+        document.querySelector("header").classList.remove('show')
+    }
+    prevScrollpos = currentScrollPos;
+};

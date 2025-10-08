@@ -117,11 +117,6 @@ section.intro h1 + span {
 }
 
 header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 2;
   background: white;
 }
 
@@ -136,29 +131,23 @@ section.intro div.container {
   height: max-content;
   background: #F5F5F7;
   z-index: 1;
-  padding-top: 130px;
+  padding-top: 30px;
   padding-bottom: 70px;
 }
 @media (max-width: 1620px) {
   section.intro div.container {
-    padding-top: 120px;
+    padding-top: 20px;
     padding-bottom: 60px;
   }
 }
 @media (max-width: 1400px) {
   section.intro div.container {
-    padding-top: 109px;
     padding-bottom: 50px;
-  }
-}
-@media (max-width: 960px) {
-  section.intro div.container {
-    padding-top: 109px;
   }
 }
 @media (max-width: 640px) {
   section.intro div.container {
-    padding-top: 90px;
+    padding-top: 30px;
     padding-bottom: 30px;
   }
 }

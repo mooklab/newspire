@@ -2050,6 +2050,11 @@ footer div.bottom a:hover {
 
 header {
   height: 100px;
+  position: sticky;
+  top: -200px;
+  z-index: 9;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 @media (max-width: 1400px) {
   header {
@@ -2277,4 +2282,8 @@ header img.menu {
   header img.menu {
     display: block;
   }
+}
+header.show {
+  top: 0;
+  background: white;
 }/*# sourceMappingURL=common.css.map */
