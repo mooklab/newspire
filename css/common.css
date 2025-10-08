@@ -2119,6 +2119,9 @@ header div.partners {
   grid-auto-flow: column;
   grid-auto-columns: -webkit-max-content;
   grid-auto-columns: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   grid-gap: 79px;
 }
 @media (max-width: 1620px) {
