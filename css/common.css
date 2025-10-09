@@ -450,6 +450,12 @@ fieldset.select div.select_current span {
   padding-right: 82px;
   border: 1px solid rgba(0, 0, 0, 0);
 }
+@media (max-width: 640px) {
+  fieldset.select div.select_current span {
+    padding-left: 20px;
+    padding-right: 62px;
+  }
+}
 fieldset.select div.select_current div.arrow {
   position: absolute;
   top: 50%;
@@ -461,6 +467,11 @@ fieldset.select div.select_current div.arrow {
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
+}
+@media (max-width: 640px) {
+  fieldset.select div.select_current div.arrow {
+    right: 20px;
+  }
 }
 fieldset.select div.select_current:focus {
   pointer-events: none;

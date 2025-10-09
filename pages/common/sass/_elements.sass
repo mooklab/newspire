@@ -149,12 +149,17 @@ fieldset.select
             padding: 19px 30px
             padding-right: calc(30px + 12px + 40px)
             border: 1px solid rgba(0,0,0,0)
+            +s(s)
+                padding-left: 20px
+                padding-right: calc(20px + 12px + 30px)
         div.arrow
             position: absolute
             top: 50%
             right: 30px
             transform: translateY(-50%)
             transition: transform .2s
+            +s(s)
+                right: 20px
         &:focus
             pointer-events: none
             span
