@@ -56,20 +56,11 @@ new Swiper('section.brands div.swiper', {
     slidesPerView: 'auto',
     spaceBetween: 30,
     loop: true,
-    speed: 1000,
+    speed: 50000,
+    allowTouchMove: false,
     autoplay: {
         delay: 0,
-    },
-    breakpoints: {
-        640: {
-            spaceBetween: 50,
-        },
-        1280: {
-            spaceBetween: 98,
-        },
-        1600: {
-            spaceBetween: 78
-        }
+        disableOnInteraction: false,
     }
 })
 

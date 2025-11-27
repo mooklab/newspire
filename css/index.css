@@ -444,9 +444,11 @@ section.brands div.swiper-wrapper {
           transition-timing-function: linear !important;
 }
 section.brands div.swiper-slide {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: auto !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
 }
 section.brands img {
   height: 50px;
@@ -455,6 +457,8 @@ section.brands img {
   opacity: 0.3;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  mix-blend-mode: multiply;
+  background-blend-mode: multiply;
 }
 section.brands img:hover {
   -webkit-filter: grayscale(0);
